@@ -1,5 +1,23 @@
-export default function Button({text}) {
+export const buttonModes = {
+    CONTAINED: "contained",
+    OUTLINED: "outlined",
+}
+
+export default function Button(props) {
+    let classes = "py-2 px-4 border rounded "
+    switch (props.mode) {
+        case buttonModes.OUTLINED:
+            classes += "bg-white hover:bg-red-700 hover:text-white border-red-700"
+            break;
+        case buttonModes.CONTAINED:
+        default:
+            classes += "bg-red-700 hover:bg-white text-white hover:text-black border-red-700"
+            break;
+    }
+    if (props.class) {
+        classes += " " + props.class
+    }
     return (
-        <button class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">{text}</button>
+        <button {...props} class={classes}>{props.text}</button>
     )
 }

@@ -1,0 +1,20 @@
+.menu-container {
+    @apply flex flex-row bg-black justify-end;
+}
+
+.menu {
+    @apply flex flex-row mx-16 my-10 gap-8;
+}
+
+.menu:hover > .menu-item {
+    opacity:0.3;
+}
+
+.menu:hover > .menu-item:hover {
+    opacity:1;
+}
+
+.menu-item {
+    @apply text-white text-xl;
+    transition: opacity 0.3s ease-in-out;
+}
