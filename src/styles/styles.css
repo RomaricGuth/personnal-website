@@ -1,0 +1,4 @@
+.polygon {
+    height: 500px;
+    clip-path: polygon(0 0, 100% 0, 100% 430px, 80% 460px, 40% 400px, 0% 460px);
+}
