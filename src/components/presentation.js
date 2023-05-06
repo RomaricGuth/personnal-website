@@ -2,11 +2,15 @@ import Image from "next/image"
 import { useTranslation } from 'next-i18next'
 import ContactButton from "./contactButton";
 import Button, { buttonModes } from "./button";
+import styles from '@/styles/presentation.module.css';
 
 export default function Presentation() {
     const { t } = useTranslation('home');
     return (
-        <div class="bg-black w-screen polygon flex flex-col justify-center">
+        <div class={styles.presentation}>
+            <div className={styles.star} />
+            <div className={styles.star} />
+            <div className={styles.star} />
             <div class="flex flex-row justify-evenly">
                 <div class="flex flex-col justify-evenly">
                     <text class="text-7xl text-white">{t('name')}</text>
