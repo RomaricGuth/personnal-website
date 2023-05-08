@@ -1,9 +1,12 @@
-import { useTranslation } from "next-i18next";
+"use client";
+
+import { useTranslation } from "../app/translation/client_utils";
 import Button, { buttonModes } from "./button";
-import { useCallback } from "react";
+import { useCallback, useContext } from "react";
+import { TranslationContext } from "./context";
 
 export default function ContactButton(props) {
-    const { t } = useTranslation('common');
+    const { t } = useTranslation(useContext(TranslationContext), 'common');
 
     const onClick = useCallback(() => {
         window.open('mailto:contact@romaricguth.com')

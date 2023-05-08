@@ -1,11 +1,15 @@
+"use client";
+
 import Image from "next/image"
-import { useTranslation } from 'next-i18next'
+import { useTranslation } from '../app/translation/client_utils'
 import ContactButton from "./contactButton";
 import Button, { buttonModes } from "./button";
 import styles from '@/styles/presentation.module.css';
+import { useContext } from "react";
+import { TranslationContext } from "./context";
 
 export default function Presentation() {
-    const { t } = useTranslation('home');
+    const { t } = useTranslation(useContext(TranslationContext), 'home');
     return (
         <div class={styles.presentation}>
             <div className={styles.star} />
