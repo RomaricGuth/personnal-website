@@ -1,7 +1,7 @@
 import Layout from '@/components/layout'
 import '@/styles/globals.css'
 import { dir } from 'i18next'
-import { languages } from '../translation/config';
+import { languages } from '../../translation/config';
 import Provider from '@/components/context';
 
 export const metadata = {

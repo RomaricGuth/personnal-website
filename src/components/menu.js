@@ -1,12 +1,12 @@
 "use client";
 
 import { useContext } from "react";
-import { useTranslation } from "../app/translation/client_utils";
+import { useTranslation } from "../translation/client_utils";
 import styles from '@/styles/menu.module.css';
 import { TranslationContext } from "./context";
 
 export default function Menu() {
-    const { t } = useTranslation(useContext(TranslationContext), 'common');
+    const { t } = useTranslation('common');
     const menuSections = [
         {
             name: t('about'),
