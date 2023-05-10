@@ -4,7 +4,7 @@
 }
 
 .presentation {
-    @apply polygon w-screen flex flex-col justify-center relative;
+    @apply polygon flex flex-col justify-center relative;
     background-image: linear-gradient(150deg, black 70%, red);
 }
 

@@ -13,10 +13,7 @@ export default function Presentation({params}) {
     const { t } = useTranslation('home');
     return (
         <div class={styles.presentation}>
-            <div className={styles.star} />
-            <div className={styles.star} />
-            <div className={styles.star} />
-            <div class="flex flex-row justify-evenly">
+            <div className="flex flex-row flex justify-evenly">
                 <div class="flex flex-col justify-evenly">
                     <text class="text-7xl text-white">{t('name')}</text>
                     <text class="text-5xl text-white">{t('job')}</text>

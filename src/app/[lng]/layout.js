@@ -25,6 +25,9 @@ export default function RootLayout({
   console.log('layout ' + lng)
   return (
     <html lang={lng} dir={dir(lng)}>
+      <head>
+        <script src="https://kit.fontawesome.com/cdbad67a63.js" crossorigin="anonymous"></script>
+      </head>
       <body>
         <Provider lng={lng}>
           <Layout>{children}</Layout>
