@@ -37,7 +37,7 @@ export default function About() {
 
     return (
         <div>
-            <p>{t('aboutText')}</p>
+            <p class="text-justify">{t('aboutText')}</p>
             <div class="flex row justify-center text-5xl gap-8 pt-8">
                 {medias.map(media => (
                     <Tooltip text={media.tooltip}>
