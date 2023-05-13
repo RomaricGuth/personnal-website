@@ -10,7 +10,6 @@ import Footer from "./footer";
 export default function Home() {
     return (
         <div>
-            <Menu />
             <Presentation/>
             <Section>
                 <About />
@@ -20,9 +19,6 @@ export default function Home() {
             </Section>
             <Section>
                 <Testimonials />
-            </Section>
-            <Section class="bg-black">
-                <Footer />
             </Section>
         </div>
     )
