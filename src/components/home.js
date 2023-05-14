@@ -14,7 +14,7 @@ export default function Home() {
             <Section>
                 <About />
             </Section>
-            <Section class="bg-red-700">
+            <Section class="bg-black">
                 <Portfolio />
             </Section>
             <Section>

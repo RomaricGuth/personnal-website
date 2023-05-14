@@ -8,7 +8,7 @@ import { menuSections } from "./menu";
 export default function Footer() {
     const { t } = useTranslation("footer");
     return (
-        <div class="text-white py-8 flex flex-col flex-1 items-center">
+        <div class="text-white flex flex-col flex-1 items-center">
             <div class="flex flex-row w-[100%] justify-between items-center">
                 <div class="flex flex-col flex-1 justify-center items-center">
                     <Image src="/asset/logo.png" alt="logo" width={200} height={200} />
