@@ -11,7 +11,7 @@ export default function Footer() {
         <div class="text-white flex flex-col flex-1 items-center">
             <div class="flex flex-row w-[100%] justify-between items-center">
                 <div class="flex flex-col flex-1 justify-center items-center">
-                    <Image src="/asset/logo.png" alt="logo" width={200} height={200} />
+                    <Image src="/assets/logo-nobg.png" alt="logo" width={200} height={200} />
                 </div>
                 <div class="flex flex-col flex-1 justify-center items-center">
                     <ContactButton />
@@ -24,7 +24,7 @@ export default function Footer() {
                     <h2 class="text-lg font-bold">{t('navigation')}</h2>
                     <div class="mt-2">
                     {menuSections.map((section) => (
-                        <a href={section.link}><h3>{t(section.name)}</h3></a>
+                        <a key={section.name} href={section.link} class="underline hover:opacity-50"><h3>{t(section.name)}</h3></a>
                     ))}
                     </div>
                 </div>

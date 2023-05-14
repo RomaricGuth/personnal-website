@@ -11,13 +11,13 @@ export default function Home() {
     return (
         <div>
             <Presentation/>
-            <Section>
+            <Section id="about">
                 <About />
             </Section>
-            <Section class="bg-black">
+            <Section id="portfolio" class="bg-black">
                 <Portfolio />
             </Section>
-            <Section>
+            <Section id="testimonials">
                 <Testimonials />
             </Section>
         </div>

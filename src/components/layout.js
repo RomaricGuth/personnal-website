@@ -1,12 +1,12 @@
 import Footer from "./footer";
-import Menu from "./menu";
+import Header from "./header";
 import Section from "./section";
 
 export default function Layout({ children }) {
   return (
     <>
     <header>
-      <Menu />
+      <Header />
     </header>
     <main
       className={`flex min-h-screen flex-col items-center justify-between`}

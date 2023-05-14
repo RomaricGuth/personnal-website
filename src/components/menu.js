@@ -1,35 +1,37 @@
 "use client";
 
-import { useContext } from "react";
 import { useTranslation } from "../translation/client_utils";
 import styles from '@/styles/menu.module.css';
-import { TranslationContext } from "./context";
+import CustomLink from "./link";
+import Link from "next/link";
 
 export const menuSections = [
     {
         name: 'about',
+        link: '#about'
     },
     {
         name: 'portfolio',
+        link: '#portfolio'
     },
     {
         name: 'testimonials',
+        link: '#testimonials'
     },
     {
         name: 'resume',
+        link: "https://romaricguth.github.io/resume"
     },
 ];
 
-export default function Menu() {
+export default function Menu(props) {
     const { t } = useTranslation('common');
 
     return (
-        <div className={styles["menu-container"]}>
-            <div className={styles.menu}>
+            <div class={styles.menu + " " + props.class}>
                 {menuSections.map((section) => (
-                    <div key={section.name} className={styles["menu-item"]}>{t(section.name)}</div>
+                    <a key={section.name} className={styles["menu-item"]} href={section.link}>{t(section.name)}</a>
                 ))}
             </div>
-        </div>
     )
 }

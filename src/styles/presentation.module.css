@@ -5,7 +5,7 @@
 
 .presentation {
     @apply polygon flex flex-col justify-center relative;
-    background-image: linear-gradient(150deg, black 70%, red);
+    background-image: linear-gradient(150deg, black 70%, #b91c1c);
 }
 
 .star {
