@@ -1,10 +1,9 @@
 "use client";
 
-import { useTranslation } from "../translation/client_utils";
+import { useTranslation } from "../utils/translation/client_utils";
 import styles from '@/styles/menu.module.css';
-import CustomLink from "./link";
-import Link from "next/link";
 
+import Link from "next/link";
 export const menuSections = [
     {
         name: 'about',

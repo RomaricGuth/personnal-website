@@ -3,7 +3,7 @@
 import { technos } from "@/utils/technos"
 import Image from "next/image"
 import styles from "@/styles/portfolio.module.css"
-import { useTranslation } from "@/translation/client_utils"
+import { useTranslation } from "@/utils/translation/client_utils"
 
 export default function Portfolio() {
     const { t } = useTranslation("home");

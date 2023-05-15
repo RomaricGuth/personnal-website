@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server'
-import { getPrefferedLocale } from '@/translation/client_utils'
-import { languages } from '@/translation/config'
+import { getPrefferedLocale } from '@/utils/translation/client_utils'
+import { languages } from '@/utils/translation/config'
 
 
 export const config = {

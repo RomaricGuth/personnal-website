@@ -7,7 +7,7 @@ import resourcesToBackend from 'i18next-resources-to-backend'
 import LanguageDetector from 'i18next-browser-languagedetector'
 import { getOptions, languages, fallbackLng } from './config'
 import acceptLanguage from 'accept-language'
-import { TranslationContext } from '../components/context'
+import { TranslationContext } from '../../components/context'
 
 acceptLanguage.languages(languages)
 
@@ -20,7 +20,7 @@ export const getPrefferedLocale = (headerValue) => {
 i18next
   .use(initReactI18next)
   .use(LanguageDetector)
-  .use(resourcesToBackend((language, namespace) => import(`../../public/translations/${language}/${namespace}.json`)))
+  .use(resourcesToBackend((language, namespace) => import(`../../../public/translations/${language}/${namespace}.json`)))
   .init({
     ...getOptions(),
     lng: undefined, // let detect the language on client side

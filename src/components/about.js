@@ -2,7 +2,7 @@
 
 import { useContext } from "react";
 import Image from "next/image";
-import { useTranslation } from "../translation/client_utils"
+import { useTranslation } from "../utils/translation/client_utils"
 import Tooltip from "./tooltip";
 
 export default function About() {

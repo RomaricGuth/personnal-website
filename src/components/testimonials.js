@@ -1,6 +1,6 @@
 "use client";
 
-import { useTranslation } from "@/translation/client_utils";
+import { useTranslation } from "@/utils/translation/client_utils";
 import styles from "@/styles/testimonials.module.css";
 import Image from "next/image";
 import { technos } from "@/utils/technos";

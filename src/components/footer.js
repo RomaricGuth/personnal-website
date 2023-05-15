@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import ContactButton from "./contactButton";
-import { useTranslation } from "@/translation/client_utils";
+import { useTranslation } from "@/utils/translation/client_utils";
 import { menuSections } from "./menu";
 
 export default function Footer() {

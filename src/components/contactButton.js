@@ -1,6 +1,6 @@
 "use client";
 
-import { useTranslation } from "../translation/client_utils";
+import { useTranslation } from "../utils/translation/client_utils";
 import Button, { buttonModes } from "./button";
 import { useCallback, useContext } from "react";
 import { TranslationContext } from "./context";

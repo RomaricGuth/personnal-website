@@ -1,8 +1,9 @@
 import Layout from '@/components/layout'
 import '@/styles/globals.css'
 import { dir } from 'i18next'
-import { languages } from '../../translation/config';
+import { languages } from '../../utils/translation/config';
 import Provider from '@/components/context';
+import Script from 'next/script';
 
 export const metadata = {
   title: 'Romaric Guth',
@@ -26,7 +27,7 @@ export default function RootLayout({
   return (
     <html lang={lng} dir={dir(lng)}>
       <head>
-        <script src="https://kit.fontawesome.com/cdbad67a63.js" crossorigin="anonymous"></script>
+        <Script src="https://kit.fontawesome.com/cdbad67a63.js" crossorigin="anonymous"></Script>
       </head>
       <body>
         <Provider lng={lng}>
