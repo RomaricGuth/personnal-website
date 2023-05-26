@@ -1,5 +1,5 @@
 .menu {
-    @apply flex flex-row gap-8;
+    @apply flex flex-col md:flex-row items-center gap-x-8 gap-y-4;
 }
 
 .menu-item {

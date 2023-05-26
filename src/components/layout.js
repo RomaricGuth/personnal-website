@@ -8,9 +8,7 @@ export default function Layout({ children }) {
     <header>
       <Header />
     </header>
-    <main
-      className={`flex min-h-screen flex-col items-center justify-between`}
-    >
+    <main>
       {children}
     </main>
     <footer>

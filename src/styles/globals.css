@@ -2,8 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
+:root {
+  font-size: clamp(16px, 1vw, 24px); /* Adjust the values as needed */
+}
+
+* {
   box-sizing: border-box;
+}
+
+body {
   font-family: var(--font-roboto), Arial, sans-serif;
 }
 
