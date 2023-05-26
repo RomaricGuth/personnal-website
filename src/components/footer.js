@@ -15,7 +15,7 @@ export default function Footer() {
                 </div>
                 <div class="flex flex-col flex-1 justify-center items-center">
                     <ContactButton />
-                    <a href="" class="mt-4 flex items-center gap-2">
+                    <a href="https://www.linkedin.com/in/guth" class="mt-4 flex items-center gap-2">
                         {t('followMe')}
                         <Image src="/assets/linkedin.png" width={20} height={20} alt="linkedin logo" />
                     </a>
@@ -30,7 +30,6 @@ export default function Footer() {
                 </div>
             </div>
             <div>Copyright © 2023 Romaric Guth</div>
-            <div><a href="">{t('privacyPolicy')}</a> | <a href="">{t('termsOfUse')}</a> | <a href="">{t('disclaimer')}</a></div> 
         </div>
     )
 }

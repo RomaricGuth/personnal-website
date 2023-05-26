@@ -65,13 +65,3 @@ export default function LanguagePicker() {
         />
     );
 }
-
-/*
-<i class="fa-sharp fa-light fa-arrow-down"></i>
-<i class="fa-solid fa-caret-down"></i>
-<i class="fa-regular fa-angle-down"></i>
-<i class="fa-sharp fa-solid fa-chevron-down"></i>
-<i class="fa-solid fa-chevron-down"></i>
-<i class="fa-solid fa-down-right"></i>
-<i class="fa-solid fa-down-long"></i>
-*/
