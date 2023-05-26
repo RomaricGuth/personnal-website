@@ -4,12 +4,26 @@ import { dir } from 'i18next'
 import { languages } from '../../utils/translation/config';
 import Provider from '@/components/context';
 import Script from 'next/script';
+import { Roboto, Montserrat } from 'next/font/google';
 
 export const metadata = {
   title: 'Romaric Guth',
   description: 'Discover my services and experience',
 };
 
+const roboto = Roboto({
+  subsets: ['latin'],
+  variable: '--font-roboto',
+  weight: '400',
+  display: 'swap',
+});
+
+const montserrat = Montserrat({
+  subsets: ['latin'],
+  variable: '--font-montserrat',
+  weight: '500',
+  display: 'swap',
+});
 
 export async function generateStaticParams() {
   return languages.map((lng) => ({lng}))
