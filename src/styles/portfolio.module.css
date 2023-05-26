@@ -1,92 +1,69 @@
 .grid {
     display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+}
+
+.app {
+    width: 90%;
+    display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
-    justify-content: center;
     gap: 2rem;
 }
 
-.card {
-    display: flex;
-    @apply bg-gray-400 border-black ;
-    border-radius: 1.5rem;
-    width: min(90vw, 530px);
-    aspect-ratio: 16 / 10;
-    overflow: hidden;
-    text-align: center;
-    position: relative;
-}
-
 .image {
-    filter: none;
-    transition: filter 0.3s ease-in-out;
+    position: relative;
+    flex: 5;
+    aspect-ratio: 16/9;
+    background-color: lightgray;
 }
 
-.card:hover .image {
-    filter: blur(0.5rem);
+@media screen and (max-width: 768px) {
+    .image {
+        width: 100%;
+    }
 }
 
-.description {
-    @apply bg-red-700;
+@media screen and (min-width: 768px) {
+    .grid .app:nth-child(even) {
+        flex-direction: row-reverse;
+    }
+}
+
+.text {
+    flex: 2;
     display: flex;
-    flex: 1;
     flex-direction: column;
-    position: absolute;
-    top: 0%;
-    width: 100%;
-    color: white;
-    border-radius: 0 0 1rem 1rem;
-    padding: 0.5rem 1rem;
-    overflow-y: hidden;
-    height: 3rem;
-    transition: height 0.15s ease, border-radius 0.15s ease;
-}
-
-.card:hover .description {
-    height: 75%;
-    border-radius: 0 0 100% 100%;
-}
-
-.call-to-action {
-    position:absolute;
-    top: 75%;
-    height: 25%;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 2rem;
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out;
-}
-
-.card:hover .call-to-action {
-    opacity: 0.75;
 }
 
 .title {
-    font-size: 1.5rem;
-    margin-bottom: 2rem;
+    font-size: 2rem;
 }
 
-.infos {
-    display: flex;
-    flex: 1;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
+.description {
+    margin-top: 4rem;
+}
+
+.tech-stack {
+    margin-top: 2rem;
+    font-weight: bold;
+    text-align: center;
 }
 
 .technos {
     display: flex;
-    flex-direction: row;
-    justify-content: center;
     flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
     gap: 2rem;
-    margin-bottom: 2rem;
+    margin-top: 1rem;
 }
 
 .techno-item {
     display: flex;
+    flex-basis: 1;
     flex-direction: column;
     font-size: 0.8rem;
     align-items: center;
@@ -97,4 +74,9 @@
     width: 50px;
     height: 50px;
     margin-bottom: 0.3rem;
+}
+
+.call-to-action {
+    margin-top: 4rem;
+    text-align: center;
 }

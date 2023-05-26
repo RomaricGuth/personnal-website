@@ -14,9 +14,7 @@ export default function Home() {
             <Section id="about">
                 <About />
             </Section>
-            <Section id="portfolio" class="bg-black">
                 <Portfolio />
-            </Section>
             <Section id="testimonials">
                 <Testimonials />
             </Section>
