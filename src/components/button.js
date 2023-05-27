@@ -4,7 +4,7 @@ export const buttonModes = {
 }
 
 export default function Button(props) {
-    let classes = "py-2 px-4 rounded "
+    let classes = "py-2 px-4 rounded flex flex-row justify-center items-center gap-2 min-w-max "
     switch (props.mode) {
         case buttonModes.OUTLINED:
             classes += "bg-white hover:border-red-700 border"
@@ -21,7 +21,7 @@ export default function Button(props) {
         <button {...props} class={classes}>
             {props.text}
             {props.renderAccessory && (
-                <div class="ml-2 inline-block">
+                <div class="inline-block">
                     {props.renderAccessory()}
                 </div>
             )}
