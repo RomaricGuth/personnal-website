@@ -12,9 +12,7 @@ export default function Layout({ children }) {
       {children}
     </main>
     <footer>
-      <Section class="bg-black py-4">
-        <Footer/>
-      </Section>
+      <Footer/>
     </footer>
     </>
   )

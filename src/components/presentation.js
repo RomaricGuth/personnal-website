@@ -13,11 +13,11 @@ export default function Presentation({params}) {
     const { t } = useTranslation('home');
     return (
         <div class={styles.presentation}>
-            <div className="flex flex-row justify-evenly">
-                <div class="flex flex-col justify-evenly">
-                    <text class="text-7xl text-white">{t('name')}</text>
-                    <text class="text-5xl text-white">{t('job')}</text>
-                    <div class="flex flex-row justify-between">
+            <div className="flex flex-row flex-wrap justify-evenly gap-8">
+                <div class="flex flex-col justify-evenly gap-4">
+                    <text class="text-7xl text-white break-words">{t('name')}</text>
+                    <text class="text-5xl text-white break-words">{t('job')}</text>
+                    <div class="flex flex-row justify-between flex-wrap">
                         <ContactButton class="flex-1 mr-4" />
                         <a href="#about" class="flex flex-1">
                             <Button
@@ -31,7 +31,7 @@ export default function Presentation({params}) {
                         </a>
                     </div>
                 </div>
-                <Image src="/profile.jpg" alt="Profile picture" width={250} height={250} class="rounded-full object-cover aspect-square"/>
+                <Image src="/assets/profile.jpg" alt="Profile picture" width={250} height={250} class="rounded-full object-cover aspect-square"/>
             </div>
         </div>
     )
