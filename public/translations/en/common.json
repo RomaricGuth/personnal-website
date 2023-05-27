@@ -1,3 +1,7 @@
 {
-    "contact": "Contact"
+    "contact": "Contact",
+    "about": "About",
+    "portfolio": "Portfolio",
+    "testimonials": "Testimonials",
+    "resume": "Resume"
 }

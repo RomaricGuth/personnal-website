@@ -14,9 +14,12 @@ export default function Presentation({params}) {
     return (
         <div class={styles.presentation}>
             <div className="flex flex-row flex-wrap justify-evenly gap-8">
-                <div class="flex flex-col justify-evenly gap-4">
-                    <text class="text-7xl text-white break-words">{t('name')}</text>
-                    <text class="text-5xl text-white break-words">{t('job')}</text>
+                <div class="flex flex-col justify-evenly gap-8">
+                    <h1 class="text-7xl text-white">{t('name')}</h1>
+                    <div class="text-5xl text-white leading-tight font-hand">
+                        {t('job1')}<br />
+                        {t('job2')}
+                    </div>
                     <div class="flex flex-row justify-between flex-wrap">
                         <ContactButton class="flex-1 mr-4" />
                         <a href="#about" class="flex flex-1">

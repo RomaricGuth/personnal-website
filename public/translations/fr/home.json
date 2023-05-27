@@ -1,12 +1,14 @@
 {
     "name": "Romaric Guth",
-    "job": "Web Developer",
-    "learnMore": "Learn more",
+    "job1": "Développeur frontend",
+    "job2": "& Entrepreneur",
+    "learnMore": "En savoir plus",
     "aboutText": "Entrepreneur dans l'âme depuis toujours, je me suis lancé en freelance pour assouvir mon besoin de créér. En plus de ce changement de statut après près de 4 ans en tant qu'ingénieur logiciel embarqué, je souhaite m'orienter d'avantage vers le développement web frontend ce qui correspond d'avantage à ma formation, mes projets personnels et mes ambitions sur le long terme. Me revoici donc en quelque sorte parmi les juniors, mais avec tout ce que j'ai appris que je compte bien transférer vers cette nouvelle position comme je l'ai déjà fait dans le sens inverse pour réussir dans cette précédente expérience.",
-    "planeatDescription": "Mobile app - cooking planner and optimizer",
-    "planeatCTA": "Soon on playstore",
-    "personnalWebsite": "Personnal Website",
-    "personnalWebsiteDescription": "Wonder if I code clean? Check out this website's sources on github !",
-    "personnalWebsiteCTA": "Check on github",
+    "techstack": "Stack technique",
+    "planeatDescription": "Application mobile - Aide à la cuisine et à la planification des repas",
+    "planeatCTA": "Bientôt sur le playstore !",
+    "personnalWebsite": "Site personnel",
+    "personnalWebsiteDescription": "Vous vous demandez comment je code ? Les sources de ce site sont sur github !",
+    "personnalWebsiteCTA": "Voir sur github",
     "thomasJob": "Responsable métier services & cloud @ Sagemcom"
 }

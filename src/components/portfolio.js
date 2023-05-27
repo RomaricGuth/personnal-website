@@ -36,7 +36,7 @@ export default function Portfolio() {
                             {app.description}
                         </div>
                         <div class={styles['tech-stack']}>
-                            Tech Stack
+                            {t('techstack')}
                             <div class={styles.technos}>
                                 {app.techs.map((techno) => (
                                     <div key={techno.name} class={styles['techno-item']}>

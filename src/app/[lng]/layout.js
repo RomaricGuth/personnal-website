@@ -1,29 +1,15 @@
 import Layout from '@/components/layout'
-import '@/styles/globals.css'
 import { dir } from 'i18next'
 import { languages } from '../../utils/translation/config';
 import Provider from '@/components/context';
 import Script from 'next/script';
-import { Roboto, Montserrat } from 'next/font/google';
+import { font_body, font_headings, font_style } from '@/utils/fonts';
+import '@/styles/globals.css'
 
 export const metadata = {
   title: 'Romaric Guth',
   description: 'Discover my services and experience',
 };
-
-const roboto = Roboto({
-  subsets: ['latin'],
-  variable: '--font-roboto',
-  weight: '400',
-  display: 'swap',
-});
-
-const montserrat = Montserrat({
-  subsets: ['latin'],
-  variable: '--font-montserrat',
-  weight: '500',
-  display: 'swap',
-});
 
 export async function generateStaticParams() {
   return languages.map((lng) => ({lng}))
@@ -39,7 +25,7 @@ export default function RootLayout({
 }) {
   console.log('layout ' + lng)
   return (
-    <html lang={lng} dir={dir(lng)}>
+    <html lang={lng} dir={dir(lng)} className={`${font_body.variable} ${font_headings.variable} ${font_style.variable}`}>
       <head>
         <Script src="https://kit.fontawesome.com/cdbad67a63.js" crossorigin="anonymous"></Script>
       </head>
