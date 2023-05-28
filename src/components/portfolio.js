@@ -27,36 +27,39 @@ export default function Portfolio() {
     ]
 
     return (
-        <div class={styles.grid}>
-            {apps.map((app) => (
-                <div key={app.name} class={styles.app}>
-                    <div class={styles.text}>
-                        <h3 class={styles.title}>{app.name}</h3>
-                        <div class={styles.description}>
-                            {app.description}
-                        </div>
-                        <div class={styles['tech-stack']}>
-                            {t('techstack')}
-                            <div class={styles.technos}>
-                                {app.techs.map((techno) => (
-                                    <div key={techno.name} class={styles['techno-item']}>
-                                        <Image src={techno.logo} width={50} height={50} alt={"logo " + techno.name} class={styles['techno-logo']}/>
-                                        {techno.name}
-                                    </div>
-                                ))}
+        <div class={styles.container}>
+            <h2 class="mb-16">{t('recentWork')}</h2>
+            <div class={styles.grid}>
+                {apps.map((app) => (
+                    <div key={app.name} class={styles.app}>
+                        <div class={styles.text}>
+                            <h3 class={styles.title}>{app.name}</h3>
+                            <div class={styles.description}>
+                                {app.description}
                             </div>
+                            <div class={styles['tech-stack']}>
+                                {t('techstack')}
+                                <div class={styles.technos}>
+                                    {app.techs.map((techno) => (
+                                        <div key={techno.name} class={styles['techno-item']}>
+                                            <Image src={techno.logo} width={50} height={50} alt={"logo " + techno.name} class={styles['techno-logo']}/>
+                                            {techno.name}
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                            {app.link && (
+                                <a href={app.link} class={styles['call-to-action']}>
+                                    <Button mode={buttonModes.OUTLINED} text={app.callToAction} />
+                                </a>
+                            )}
                         </div>
-                        {app.link && (
-                            <a href={app.link} class={styles['call-to-action']}>
-                                <Button mode={buttonModes.OUTLINED} text={app.callToAction} />
-                            </a>
-                        )}
+                        <div class={styles.image}>
+                            <Image src={app.pictures[0]} fill alt={app.name} /> 
+                        </div>
                     </div>
-                    <div class={styles.image}>
-                        <Image src={app.pictures[0]} fill alt={app.name} /> 
-                    </div>
-                </div>
-            ))}
+                ))}
+            </div>
         </div>
     )
 }

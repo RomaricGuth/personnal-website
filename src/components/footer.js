@@ -21,10 +21,10 @@ export default function Footer() {
                     </a>
                 </div>
                 <div class="flex flex-col flex-1 items-center order-2 sm:order-3">
-                    <h2 class="text-lg font-bold">{t('navigation')}</h2>
+                    <div class="text-lg font-bold">{t('navigation')}</div>
                     <div class="mt-2 flex flex-col items-center sm:items-start">
                     {menuSections.map((section) => (
-                        <a key={section.name} href={section.link} class="underline hover:opacity-50"><h3>{t(section.name)}</h3></a>
+                        <a key={section.name} href={section.link} class="underline hover:opacity-50">{t(section.name)}</a>
                     ))}
                     </div>
                 </div>

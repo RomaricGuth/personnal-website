@@ -7,12 +7,7 @@ import { TranslationContext } from "./context";
 
 export default function ContactButton(props) {
     const { t } = useTranslation('common');
-
-    const onClick = useCallback(() => {
-        window.open('mailto:contact@romaricguth.com')
-    }, [])
-
     return (
-        <Button text={t('contact')} onClick={onClick} mode={buttonModes.CONTAINED} {...props} />
+    <a href="mailto:contact@romaricguth.com" {...props}><Button text={t('contact')} mode={buttonModes.CONTAINED} {...props} /></a>
     )
 }

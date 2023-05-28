@@ -14,7 +14,7 @@ export default function Presentation({params}) {
     return (
         <div className={"flex flex-row flex-wrap justify-evenly gap-8 pt-16 " + styles['clip-path']}>
             <div class="flex flex-col flex-wrap justify-evenly gap-8 mx-4 break-words">
-                <h1 class="text-7xl text-white">{t('name')}</h1>
+                <h1 class="text-white">{t('name')}</h1>
                 <div class="text-5xl text-white leading-tight font-hand">
                     {t('job1')}<br />
                     {t('job2')}
