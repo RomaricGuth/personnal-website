@@ -1,6 +1,6 @@
 "use client"
 
-import Image from "next/image";
+import Image from "./image";
 import ContactButton from "./contactButton";
 import { useTranslation } from "@/utils/translation/client_utils";
 import { menuSections } from "./menu";

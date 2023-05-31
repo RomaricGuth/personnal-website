@@ -2,7 +2,7 @@
 
 import { useTranslation } from "@/utils/translation/client_utils";
 import styles from "@/styles/testimonials.module.css";
-import Image from "next/image";
+import Image from "./image";
 import { technos } from "@/utils/technos";
 
 export default function Testimonials() {

@@ -1,7 +1,7 @@
 "use client";
 
 import { technos } from "@/utils/technos"
-import Image from "next/image"
+import Image from "./image"
 import styles from "@/styles/portfolio.module.css"
 import { useTranslation } from "@/utils/translation/client_utils"
 import Button, { buttonModes } from "./button";

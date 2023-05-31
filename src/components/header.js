@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "./image";
 import Menu from "./menu";
 import Link from "next/link";
 import LanguagePicker from "./languagePicker";

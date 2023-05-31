@@ -1,7 +1,7 @@
 "use client"
 
 import { fallbackLng, languages } from '@/utils/translation/config';
-import Image from 'next/image';
+import Image from './image';
 import { usePathname, useRouter } from 'next/navigation';
 import Dropdown from './dropdown';
 import { useCallback } from 'react';
