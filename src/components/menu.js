@@ -18,8 +18,8 @@ export const menuSections = [
         link: '#testimonials'
     },
     {
-        name: 'resume',
-        link: "https://romaricguth.github.io/resume"
+        name: 'contact',
+        link: "#contact"
     },
 ];
 

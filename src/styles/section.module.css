@@ -1,0 +1,7 @@
+.section {
+    @apply px-8 py-16;
+}
+
+.section-large {
+  @apply py-16 px-8 md:px-16 lg:px-[20%];
+}

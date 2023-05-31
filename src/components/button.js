@@ -7,7 +7,7 @@ export default function Button(props) {
     let classes = "py-2 px-4 rounded flex flex-row justify-center items-center gap-2 min-w-max "
     switch (props.mode) {
         case buttonModes.OUTLINED:
-            classes += "bg-white hover:border-red-700 border"
+            classes += "bg-white text-black hover:border-red-700 border"
             break;
         case buttonModes.CONTAINED:
         default:

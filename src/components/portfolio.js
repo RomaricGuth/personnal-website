@@ -55,7 +55,7 @@ export default function Portfolio() {
                             )}
                         </div>
                         <div class={styles.image}>
-                            <Image src={app.pictures[0]} fill alt={app.name} /> 
+                            <Image src={app.pictures[0]} fill alt={app.name} style={{objectFit: "contain"}}/> 
                         </div>
                     </div>
                 ))}

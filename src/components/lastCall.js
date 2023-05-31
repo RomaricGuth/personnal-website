@@ -1,6 +1,5 @@
 "use client"
 
-import Tooltip from "./tooltip";
 import Image from "next/image";
 import { useTranslation } from "@/utils/translation/client_utils";
 import Button, { buttonModes } from "./button";
@@ -48,9 +47,9 @@ export default function LastCall() {
                 {contactMedias.map(media => (
                     <div key={media.name} class="flex flex-row items-center gap-4">
                         <a href={media.url} key={media.name}>
-                            <Image key={media.name} src={media.image} alt={media.name} width={30} height={30} />
+                            <Image key={media.name} src={media.image} alt={media.name} width={30} height={30} class="min-w-[30px]"/>
                         </a>
-                        <div>
+                        <div class="truncate">
                             {media.name}{' : '}
                             <a href={media.url} class="inline underline">{media.urlAlias ?? media.url}</a>
                         </div>
@@ -63,7 +62,7 @@ export default function LastCall() {
                 {otherMedias.map(media => (
                     <div key={media.name} class="flex flex-row items-center gap-4">
                         <a href={media.url}>
-                            <Image key={media.name} src={media.image} alt={media.name} width={30} height={30} />
+                            <Image key={media.name} src={media.image} alt={media.name} width={30} height={30} class="min-w-[30px]"/>
                         </a>
                         <div>
                             {media.text}

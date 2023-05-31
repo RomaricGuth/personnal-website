@@ -23,7 +23,7 @@ export default function Testimonials() {
                 <div key={testimonial.author} class={styles.testimonial}>
                     <Image src={testimonial.picture} width={100} height={100} alt={"picture of " + testimonial.author} class={styles['author-pic']} />
                     <blockquote class={styles.comment}>{testimonial.comment}</blockquote>
-                    <a href={testimonial.linkedin} class="flex flex-row gap-2">
+                    <a href={testimonial.linkedin} class="flex flex-row items-center gap-2">
                         <cite class={styles['author-name']}>{testimonial.author}</cite>
                         <Image src="/assets/linkedin.png" width={20} height={20} alt="Linkedin logo" />
                     </a>

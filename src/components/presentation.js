@@ -12,10 +12,10 @@ export default function Presentation({params}) {
     console.log('params', params);
     const { t } = useTranslation('home');
     return (
-        <div className={"flex flex-row flex-wrap justify-evenly gap-8 pt-16 " + styles['clip-path']}>
-            <div class="flex flex-col flex-wrap justify-evenly gap-8 mx-4 break-words">
-                <h1 class="text-white">{t('name')}</h1>
-                <div class="text-5xl text-white leading-tight font-hand">
+        <div className={"flex flex-row flex-wrap justify-evenly items-center gap-8 pt-16 px-4 " + styles['clip-path']}>
+            <div class="flex flex-col flex-wrap justify-evenly gap-8 break-words">
+                <h1>{t('name')}</h1>
+                <div class="text-5xl leading-tight font-hand">
                     {t('job1')}<br />
                     {t('job2')}
                 </div>
@@ -33,7 +33,7 @@ export default function Presentation({params}) {
                     </a>
                 </div>
             </div>
-            <Image src="/assets/profile.jpg" alt="Profile picture" width={250} height={250} class="rounded-full object-cover aspect-square mx-4"/>
+            <Image src="/assets/profile.jpg" alt="Profile picture" width={250} height={250} class={styles.profile}/>
         </div>
     )
 }

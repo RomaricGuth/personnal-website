@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useTranslation } from "../utils/translation/client_utils"
 
 export default function About() {
@@ -13,7 +14,10 @@ export default function About() {
                 <li>{t('need2')}</li>
                 <li>{t('need3')}</li>
             </ul>
-            <h3 class="mt-16 mb-8">{t('storyTime')}</h3>
+            <div class="flex flex-row items-center gap-2 mt-16 mb-8"> 
+                <h3>{t('storyTime')}</h3>
+                <Image src="/assets/pen.png" alt="picture of a pen" width={30} height={30} />
+            </div>
             <p class="text-justify">{t('story')}</p>
         </div>
     )
