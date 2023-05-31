@@ -7,20 +7,21 @@ import { useTranslation } from "@/utils/translation/client_utils"
 import Button, { buttonModes } from "./button";
 
 export default function Portfolio() {
-    const { t } = useTranslation("home");
+    const { t, i18n : {language}} = useTranslation("home");
     const apps = [
         {
             name: 'Planeat',
             description: t('planeatDescription'),
+            bullets: [t('planeat1'), t('planeat2'), t('planeat3')],
             techs: [technos.REACT_NATIVE, technos.REDUX],
-            pictures: ["/assets/planeat.png"],
+            pictures: ["/assets/planeat_" + language + ".png"],
             callToAction: t('planeatCTA')
         },
         {
             name: t('personnalWebsite'),
             description: t('personnalWebsiteDescription'),
             techs: [technos.REACT, technos.TAILWIND, technos.NEXT],
-            pictures: [''],
+            pictures: ["/assets/portfolio_" + language + ".png"],
             callToAction: t('personnalWebsiteCTA'),
             link: "https://github.com/RomaricGuth/personnal-website"
         }
@@ -37,6 +38,11 @@ export default function Portfolio() {
                             <div class={styles.description}>
                                 {app.description}
                             </div>
+                            {app.bullets?.length > 0 && (<ul class="mt-4">
+                                {app.bullets?.map((hint, index) => (
+                                    <li key={index} class="list-disc list-inside">{hint}</li>
+                                ))}
+                            </ul>)}
                             <div class={styles['tech-stack']}>
                                 {t('techstack')}
                                 <div class={styles.technos}>
@@ -48,10 +54,14 @@ export default function Portfolio() {
                                     ))}
                                 </div>
                             </div>
-                            {app.link && (
+                            {app.link ? (
                                 <a href={app.link} class={styles['call-to-action']}>
                                     <Button mode={buttonModes.OUTLINED} text={app.callToAction} />
                                 </a>
+                            ) : (
+                                <h4 class={styles['call-to-action']}>
+                                    {app.callToAction}
+                                </h4>
                             )}
                         </div>
                         <div class={styles.image}>

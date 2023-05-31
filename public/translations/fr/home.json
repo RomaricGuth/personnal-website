@@ -4,12 +4,15 @@
     "job2": "& Entrepreneur",
     "learnMore": "En savoir plus",
     "needMe": "Vous avez peut-être besoin de moi si",
-    "need1": "Vous voulez créér quelque chose",
-    "need2": "Vous cherchez de nouvelles idées sur votre produit et vos stratégies",
-    "need3": "Alternativement, si vous aimez le piano et les chats",
+    "need1": "Vous êtes en train de créér quelque chose",
+    "need2": "Vous êtes ouvert à de nouvelles idées sur vos produits et stratégies",
+    "need3": "Vous êtes de la team chat",
     "aboutText": "Entrepreneur dans l'âme depuis toujours, je me suis lancé en freelance pour assouvir mon besoin de créér. En plus de ce changement de statut après près de 4 ans en tant qu'ingénieur logiciel embarqué, je souhaite m'orienter d'avantage vers le développement web frontend ce qui correspond d'avantage à ma formation, mes projets personnels et mes ambitions sur le long terme. Me revoici donc en quelque sorte parmi les juniors, mais avec tout ce que j'ai appris que je compte bien transférer vers cette nouvelle position comme je l'ai déjà fait dans le sens inverse pour réussir dans cette précédente expérience.",
     "techstack": "Stack technique",
     "planeatDescription": "Application mobile - Aide à la cuisine et à la planification des repas",
+    "planeat1": "Création, import et édition des recettes",
+    "planeat2": "Gestion des menus",
+    "planeat3": "Génération de listes de courses",
     "planeatCTA": "Bientôt sur le playstore !",
     "personnalWebsite": "Site portfolio",
     "personnalWebsiteDescription": "Vous vous demandez comment je code ? Les sources de ce site sont sur github !",
@@ -20,7 +23,7 @@
     "knowMore": "Vous voulez encore en savoir plus ?",
     "checkResume": "Voir mon CV",
     "githubExplanation": "Certains de mes projets sont publics sur ",
-    "leetcodeExplanation": "J'aime résoudre des problèmes algorithmiques sur  ",
+    "leetcodeExplanation": "Je fais de temps en temps chauffer mon cerveau sur des problèmes algorithmiques de  ",
     "storyTime": "Story Time",
-    "story": "Après avoir terminé mes études par un cycle ingénieur en apprentissage sur 3 ans, j'ai poursuivi en CDI mais me suis senti au fil du temps de moins en moins à ma place. Ce sentiment m'a fait réfléchir et réaliser que je n'avançais plus vers mes objectifs long terme. C'est alors que j'ai décidé de me lancer en tant qu'indépendant, une première étape pour satisfaire mon envie d'entreprendre et de créér. Ce statut me permet également de m'organiser plus facilement pour développer mes projets annexes et mes passions à savoir le piano et le bridge."
+    "story": "Après un bac S, j'évolue vers l'informatique au début un peu au hasard. Au fur et à mesure que je prends le contrôle sur les cours que je suis, je m'épanouis et commence à réfléchir aux directions que je veux donner à ma vie. Je continue en cycle ingénieur en apprentissage, avec déjà l'idée de gagner en indépendance et en expérience. Très vite, je me retrouve à 22 ans avec un CDI suite à mon alternance mais surtout avec une envie de créer et d'entreprendre, que j'ai toujours eue mais qui me fait de plus en plus ressentir une urgence. Ce sentiment me fait réfléchir et réaliser que je n'avance plus vers mes objectifs long terme. C'est alors que je décide de me lancer en tant qu'indépendant, une première étape pour satisfaire cette envie tout en continuant de partager et d'apprendre avec d'autres. Ce statut me permet également de m'organiser plus facilement pour développer mes projets annexes et mes passions à savoir le piano et le bridge."
 }
