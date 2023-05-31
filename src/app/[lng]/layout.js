@@ -23,7 +23,6 @@ export default function RootLayout({
     lng
   }
 }) {
-  console.log('layout ' + lng)
   return (
     <html lang={lng} dir={dir(lng)} className={`${font_body.variable} ${font_headings.variable} ${font_style.variable}`}>
       <head>

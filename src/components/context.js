@@ -4,7 +4,6 @@ import { createContext } from 'react';
  
 
 export default function Provider({ lng, children }) {
-    console.log('provider ' + lng);
     return (
         <TranslationProvider lng={lng}>{children}</TranslationProvider>
     )

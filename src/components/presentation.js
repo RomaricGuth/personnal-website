@@ -9,7 +9,6 @@ import { useContext } from "react";
 import { TranslationContext } from "./context";
 
 export default function Presentation({params}) {
-    console.log('params', params);
     const { t } = useTranslation('home');
     return (
         <div className={"flex flex-row flex-wrap justify-evenly items-center gap-8 pt-16 px-4 " + styles['clip-path']}>

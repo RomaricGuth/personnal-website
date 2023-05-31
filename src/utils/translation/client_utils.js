@@ -32,7 +32,6 @@ i18next
 export function useTranslation(ns, options) {
   const { lng } = useContext(TranslationContext);
   if (i18next.resolvedLanguage !== lng) {
-    console.log('change language from ' + i18next.resolvedLanguage + ' to ' + lng);
     i18next.changeLanguage(lng)
   }
   return useTranslationOrg(ns, options)
