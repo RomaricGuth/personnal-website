@@ -7,21 +7,21 @@ import { useTranslation } from "@/utils/translation/client_utils"
 import Button, { buttonModes } from "./button";
 
 export default function Portfolio() {
-    const { t, i18n : {language}} = useTranslation("home");
+    const { t, i18n : {resolvedLanguage}} = useTranslation("home");
     const apps = [
         {
             name: 'Planeat',
             description: t('planeatDescription'),
             bullets: [t('planeat1'), t('planeat2'), t('planeat3')],
             techs: [technos.REACT_NATIVE, technos.REDUX],
-            pictures: ["/assets/planeat_" + language + ".png"],
+            pictures: ["/assets/planeat_" + resolvedLanguage + ".png"],
             callToAction: t('planeatCTA')
         },
         {
             name: t('personnalWebsite'),
             description: t('personnalWebsiteDescription'),
             techs: [technos.REACT, technos.TAILWIND, technos.NEXT],
-            pictures: ["/assets/portfolio_" + language + ".png"],
+            pictures: ["/assets/portfolio_" + resolvedLanguage + ".png"],
             callToAction: t('personnalWebsiteCTA'),
             link: "https://github.com/RomaricGuth/personnal-website"
         }

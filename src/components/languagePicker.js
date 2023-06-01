@@ -4,7 +4,8 @@ import { fallbackLng, languages } from '@/utils/translation/config';
 import Image from './image';
 import { usePathname, useRouter } from 'next/navigation';
 import Dropdown from './dropdown';
-import { useCallback } from 'react';
+import { useCallback, useState } from 'react';
+import { getLanguage, setLanguage, useTranslation } from '@/utils/translation/client_utils';
 
 const FlagImage = ({locale}) => {
     return (
@@ -18,44 +19,31 @@ const FlagImage = ({locale}) => {
 }
 
 export default function LanguagePicker() {
-    const router = useRouter();
-    const path = usePathname();
-    let currentLocale;
-    if (path && path.startsWith('/')) {
-        const localeEndIndex = path.indexOf('/', 1);
-        if (localeEndIndex > 0) {
-            currentLocale = path.substring(1, localeEndIndex);
-        } else {
-            currentLocale = path.substring(1);
-        }
-
-        if (!languages.includes(currentLocale)) {
-            currentLocale = fallbackLng;
-        }
-    }
+    const {i18n} = useTranslation();
+    const  [locale, setLocale] = useState(i18n.resolvedLanguage); // init with resolved language
 
     const handleLanguageChange = useCallback((newLocale) => {
-        if (newLocale === currentLocale) {
+        if (newLocale === locale) {
             return;
         }
 
-        const newPath = path.startsWith('/' + currentLocale) ?
-            path.replace('/' + currentLocale, '/' + newLocale) :
-            '/' + newLocale + path;
-        router.push(newPath);
-    }, [router, path, currentLocale]);
+        setLanguage(newLocale);
+        setLocale(newLocale);
+    }, [locale]);
 
     const renderLanguage = useCallback((locale) => (
-        <div class="flex items-center gap-2 text-white">
-            <FlagImage locale={locale} />
-            <span>{locale.toUpperCase()}</span>
-        </div>
+        locale && ( // undefined at first render
+            <div class="flex items-center gap-2 text-white">
+                <FlagImage locale={locale} />
+                <span>{locale.toUpperCase()}</span>
+            </div>
+        )
     ), [])
 
     return (
         <Dropdown
             values={languages}
-            value={currentLocale}
+            value={locale}
             renderItem={renderLanguage}
             onSelect={handleLanguageChange}
             containerClass="border-white"

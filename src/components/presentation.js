@@ -6,7 +6,6 @@ import ContactButton from "./contactButton";
 import Button, { buttonModes } from "./button";
 import styles from '@/styles/presentation.module.css';
 import { useContext } from "react";
-import { TranslationContext } from "./context";
 
 export default function Presentation({params}) {
     const { t } = useTranslation('home');

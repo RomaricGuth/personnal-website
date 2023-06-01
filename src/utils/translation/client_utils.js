@@ -7,7 +7,6 @@ import resourcesToBackend from 'i18next-resources-to-backend'
 import LanguageDetector from 'i18next-browser-languagedetector'
 import { getOptions, languages, fallbackLng } from './config'
 import acceptLanguage from 'accept-language'
-import { TranslationContext } from '../../components/context'
 
 acceptLanguage.languages(languages)
 
@@ -24,15 +23,19 @@ i18next
   .init({
     ...getOptions(),
     lng: undefined, // let detect the language on client side
+    fallbackLng,
+    supportedLngs: languages,
+    nonExplicitSupportedLngs: true,
     detection: {
       order: ['path', 'htmlTag', 'cookie', 'navigator'],
+      caches: ['cookie']
     }
   })
 
 export function useTranslation(ns, options) {
-  const { lng } = useContext(TranslationContext);
-  if (i18next.resolvedLanguage !== lng) {
-    i18next.changeLanguage(lng)
-  }
   return useTranslationOrg(ns, options)
+}
+
+export function setLanguage(locale) {
+  i18next.changeLanguage(locale)
 }

@@ -2,8 +2,6 @@
 
 import { useTranslation } from "../utils/translation/client_utils";
 import Button, { buttonModes } from "./button";
-import { useCallback, useContext } from "react";
-import { TranslationContext } from "./context";
 
 export default function ContactButton(props) {
     const { t } = useTranslation('common');
