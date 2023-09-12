@@ -18,16 +18,16 @@ export default function Testimonials() {
     ];
 
     return (
-        <div class={styles.testimonials}>
+        <div className={styles.testimonials}>
             {testimonials.map((testimonial) => (
-                <div key={testimonial.author} class={styles.testimonial}>
-                    <Image src={testimonial.picture} width={100} height={100} alt={"picture of " + testimonial.author} class={styles['author-pic']} />
-                    <blockquote class={styles.comment}>{testimonial.comment}</blockquote>
-                    <a href={testimonial.linkedin} class="flex flex-row items-center gap-2">
-                        <cite class={styles['author-name']}>{testimonial.author}</cite>
+                <div key={testimonial.author} className={styles.testimonial}>
+                    <Image src={testimonial.picture} width={100} height={100} alt={"picture of " + testimonial.author} className={styles['author-pic']} />
+                    <blockquote className={styles.comment}>{testimonial.comment}</blockquote>
+                    <a href={testimonial.linkedin} className="flex flex-row items-center gap-2">
+                        <cite className={styles['author-name']}>{testimonial.author}</cite>
                         <Image src="/assets/linkedin.png" width={20} height={20} alt="Linkedin logo" />
                     </a>
-                    <p class={styles['author-job']}>{testimonial.job}</p>
+                    <p className={styles['author-job']}>{testimonial.job}</p>
                 </div>
             ))}
         </div>

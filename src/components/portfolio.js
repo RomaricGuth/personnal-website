@@ -10,6 +10,14 @@ export default function Portfolio() {
     const { t, i18n : {resolvedLanguage}} = useTranslation("home");
     const apps = [
         {
+            name: t('masEuliac'),
+            description: t('masEuliacDescription'),
+            techs: [technos.NEXT, technos.TAILWIND],
+            pictures: ["/assets/mas_euliac.png"],
+            callToAction: t('masEuliacCTA'),
+            link: "https://mas-euliac.fr"
+        },
+        {
             name: 'Planeat',
             description: t('planeatDescription'),
             bullets: [t('planeat1'), t('planeat2'), t('planeat3')],
@@ -20,7 +28,7 @@ export default function Portfolio() {
         {
             name: t('personnalWebsite'),
             description: t('personnalWebsiteDescription'),
-            techs: [technos.REACT, technos.TAILWIND, technos.NEXT],
+            techs: [technos.NEXT, technos.TAILWIND],
             pictures: ["/assets/portfolio_" + resolvedLanguage + ".png"],
             callToAction: t('personnalWebsiteCTA'),
             link: "https://github.com/RomaricGuth/personnal-website"
@@ -28,43 +36,43 @@ export default function Portfolio() {
     ]
 
     return (
-        <div class={styles.container}>
-            <h2 class="mb-16">{t('recentWork')}</h2>
-            <div class={styles.grid}>
+        <div className={styles.container}>
+            <h2 className="mb-16">{t('recentWork')}</h2>
+            <div className={styles.grid}>
                 {apps.map((app) => (
-                    <div key={app.name} class={styles.app}>
-                        <div class={styles.text}>
-                            <h3 class={styles.title}>{app.name}</h3>
-                            <div class={styles.description}>
+                    <div key={app.name} className={styles.app}>
+                        <div className={styles.text}>
+                            <h3 className={styles.title}>{app.name}</h3>
+                            <div className={styles.description}>
                                 {app.description}
                             </div>
-                            {app.bullets?.length > 0 && (<ul class="mt-4">
+                            {app.bullets?.length > 0 && (<ul className="mt-4">
                                 {app.bullets?.map((hint, index) => (
-                                    <li key={index} class="list-disc list-inside">{hint}</li>
+                                    <li key={index} className="list-disc list-inside">{hint}</li>
                                 ))}
                             </ul>)}
-                            <div class={styles['tech-stack']}>
+                            <div className={styles['tech-stack']}>
                                 {t('techstack')}
-                                <div class={styles.technos}>
+                                <div className={styles.technos}>
                                     {app.techs.map((techno) => (
-                                        <div key={techno.name} class={styles['techno-item']}>
-                                            <Image src={techno.logo} width={50} height={50} alt={"logo " + techno.name} class={styles['techno-logo']}/>
+                                        <div key={techno.name} className={styles['techno-item']}>
+                                            <Image src={techno.logo} width={50} height={50} alt={"logo " + techno.name} className={styles['techno-logo']}/>
                                             {techno.name}
                                         </div>
                                     ))}
                                 </div>
                             </div>
                             {app.link ? (
-                                <a href={app.link} class={styles['call-to-action']}>
+                                <a href={app.link} className={styles['call-to-action']}>
                                     <Button mode={buttonModes.OUTLINED} text={app.callToAction} />
                                 </a>
                             ) : (
-                                <h4 class={styles['call-to-action']}>
+                                <h4 className={styles['call-to-action']}>
                                     {app.callToAction}
                                 </h4>
                             )}
                         </div>
-                        <div class={styles.image}>
+                        <div className={styles.image}>
                             <Image src={app.pictures[0]} fill alt={app.name} style={{objectFit: "contain"}}/> 
                         </div>
                     </div>

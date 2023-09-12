@@ -12,7 +12,7 @@ export default function Home() {
             <Section id="about">
                 <About />
             </Section>
-            <Section id="portfolio" dense>
+            <Section id="portfolio" dense={true}>
                 <Portfolio />
             </Section>
             <Section id="testimonials">

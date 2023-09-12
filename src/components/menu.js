@@ -27,7 +27,7 @@ export default function Menu(props) {
     const { t } = useTranslation('common');
 
     return (
-            <div class={styles.menu + " " + props.class}>
+            <div className={styles.menu + " " + props.className}>
                 {menuSections.map((section) => (
                     <a key={section.name} className={styles["menu-item"]} href={section.link}>{t(section.name)}</a>
                 ))}

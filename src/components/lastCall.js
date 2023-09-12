@@ -43,30 +43,30 @@ export default function LastCall() {
     return (
         <div>
             <h3>{t('workTogether')}</h3>
-            <div class="flex flex-col justify-center gap-4 mt-8">
+            <div className="flex flex-col justify-center gap-4 mt-8">
                 {contactMedias.map(media => (
-                    <div key={media.name} class="flex flex-row items-center gap-4">
+                    <div key={media.name} className="flex flex-row items-center gap-4">
                         <a href={media.url} key={media.name}>
-                            <Image key={media.name} src={media.image} alt={media.name} width={30} height={30} class="min-w-[30px]"/>
+                            <Image key={media.name} src={media.image} alt={media.name} width={30} height={30} className="min-w-[30px]"/>
                         </a>
-                        <div class="truncate">
+                        <div className="truncate">
                             {media.name}{' : '}
-                            <a href={media.url} class="inline underline">{media.urlAlias ?? media.url}</a>
+                            <a href={media.url} className="inline underline">{media.urlAlias ?? media.url}</a>
                         </div>
                     </div>
                 ))}
             </div>
 
-            <h3 class="mt-16 mb-8">{t('knowMore')}</h3>
-            <div class="flex flex-col gap-4 mb-8">
+            <h3 className="mt-16 mb-8">{t('knowMore')}</h3>
+            <div className="flex flex-col gap-4 mb-8">
                 {otherMedias.map(media => (
-                    <div key={media.name} class="flex flex-row items-center gap-4">
+                    <div key={media.name} className="flex flex-row items-center gap-4">
                         <a href={media.url}>
-                            <Image key={media.name} src={media.image} alt={media.name} width={30} height={30} class="min-w-[30px]"/>
+                            <Image key={media.name} src={media.image} alt={media.name} width={30} height={30} className="min-w-[30px]"/>
                         </a>
                         <div>
                             {media.text}
-                            <a href={media.url} class="inline underline">{media.name}</a>
+                            <a href={media.url} className="inline underline">{media.name}</a>
                         </div>
                     </div>
                 ))}

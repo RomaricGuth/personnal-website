@@ -33,7 +33,7 @@ export default function LanguagePicker() {
 
     const renderLanguage = useCallback((locale) => (
         locale && ( // undefined at first render
-            <div class="flex items-center gap-2 text-white">
+            <div className="flex items-center gap-2 text-white">
                 <FlagImage locale={locale} />
                 <span>{locale.toUpperCase()}</span>
             </div>

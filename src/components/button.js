@@ -14,14 +14,14 @@ export default function Button(props) {
             classes += "bg-red-700 hover:bg-red-800 text-white"
             break;
     }
-    if (props.class) {
-        classes += " " + props.class
+    if (props.className) {
+        classes += " " + props.className
     }
     return (
-        <button {...props} class={classes}>
+        <button {...props} className={classes}>
             {props.text}
             {props.renderAccessory && (
-                <div class="inline-block">
+                <div className="inline-block">
                     {props.renderAccessory()}
                 </div>
             )}
