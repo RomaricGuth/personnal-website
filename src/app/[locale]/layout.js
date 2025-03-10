@@ -4,8 +4,11 @@ import { font_body, font_headings, font_style } from "@/utils/fonts";
 import "@/styles/globals.css";
 
 import { NextIntlClientProvider } from "next-intl";
-import { getMessages } from "next-intl/server";
-import { notFound } from "next/navigation";
+import {
+  getMessages,
+  getTranslations,
+  setRequestLocale,
+} from "next-intl/server";
 import { routing } from "@/i18n/routing";
 
 export function generateStaticParams() {
@@ -15,7 +18,8 @@ export function generateStaticParams() {
 export const dynamic = "error";
 export const dynamicParams = false;
 
-export async function generateMetadata({ params: { locale } }) {
+export async function generateMetadata({ params }) {
+  const { locale } = await params;
   const t = await getTranslations({ locale });
 
   return {
@@ -28,8 +32,10 @@ export default async function RootLayout({
   // Layouts must accept a children prop.
   // This will be populated with nested layouts or pages
   children,
-  params: { locale },
+  params,
 }) {
+  const { locale } = await params;
+  setRequestLocale(locale);
   const messages = await getMessages();
 
   return (

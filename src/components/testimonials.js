@@ -1,9 +1,7 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import styles from "../styles/testimonials.module.css";
 import Image from "./image";
-import { technos } from "../utils/technos";
 
 export default function Testimonials() {
   const t = useTranslations("HomePage");
@@ -19,24 +17,33 @@ export default function Testimonials() {
   ];
 
   return (
-    <div className={styles.testimonials}>
+    <div className="flex flex-col items-center justify-center">
       {testimonials.map((testimonial) => (
-        <div key={testimonial.author} className={styles.testimonial}>
+        <div
+          key={testimonial.author}
+          className="flex flex-1 flex-col items-center text-center"
+        >
           <Image
             src={testimonial.picture}
             width={100}
             height={100}
             alt={"picture of " + testimonial.author}
-            className={styles["author-pic"]}
+            className="rounded-full"
           />
-          <blockquote className={styles.comment}>
+          <blockquote className="py-12 max-w-[600px] relative">
+            <span className="absolute text-6xl text-red-700 left-[-0.2em] top-0">
+              &ldquo;
+            </span>
             {testimonial.comment}
+            <span className="absolute text-6xl text-red-700 right-[-0.2em] bottom-[-0.5em]">
+              &rdquo;
+            </span>
           </blockquote>
           <a
             href={testimonial.linkedin}
             className="flex flex-row items-center gap-2"
           >
-            <cite className={styles["author-name"]}>{testimonial.author}</cite>
+            <cite className="font-bold">{testimonial.author}</cite>
             <Image
               src="/assets/linkedin.png"
               width={20}
@@ -44,7 +51,7 @@ export default function Testimonials() {
               alt="Linkedin logo"
             />
           </a>
-          <p className={styles["author-job"]}>{testimonial.job}</p>
+          <p className="mt-2">{testimonial.job}</p>
         </div>
       ))}
     </div>

@@ -3,7 +3,8 @@
 import Image from "./image";
 import Dropdown from "./dropdown";
 import { useCallback } from "react";
-import { useRouter, usePathname, useLocale } from "../i18n/navigation";
+import { useRouter, usePathname } from "../i18n/navigation";
+import { useLocale } from "next-intl";
 
 const languages = ["en", "fr"];
 

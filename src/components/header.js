@@ -1,7 +1,7 @@
 import Image from "./image";
 import Menu from "./menu";
 import LanguagePicker from "./languagePicker";
-import { Link } from "../i18n/navigation";
+import { Link } from "@/i18n/navigation";
 
 export default async function Header() {
   return (

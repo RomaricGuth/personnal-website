@@ -1,9 +1,7 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import styles from "../styles/menu.module.css";
 
-import Link from "next/link";
 export const menuSections = [
   {
     name: "about",
@@ -27,11 +25,13 @@ export default function Menu(props) {
   const t = useTranslations("Common");
 
   return (
-    <div className={styles.menu + " " + props.className}>
+    <div
+      className={`flex flex-col md:flex-row items-center gap-x-8 gap-y-4 ${props.className}`}
+    >
       {menuSections.map((section) => (
         <a
           key={section.name}
-          className={styles["menu-item"]}
+          className="text-white text-xl transition-opacity duration-300 ease-in-out hover:opacity-100 group-hover:opacity-30"
           href={section.link}
         >
           {t(section.name)}

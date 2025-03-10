@@ -4,17 +4,17 @@ import Image from "./image";
 import { useTranslations } from "next-intl";
 import ContactButton from "./contactButton";
 import Button, { buttonModes } from "./button";
-import styles from "../styles/presentation.module.css";
 
 export default function Presentation() {
   const t = useTranslations("HomePage");
 
   return (
     <div
-      className={
-        "flex flex-row flex-wrap justify-evenly items-center gap-8 pt-16 px-4 " +
-        styles["clip-path"]
-      }
+      className="flex flex-row flex-wrap justify-evenly items-center gap-8 pt-16 px-4 pb-[calc(5vw+4rem)] bg-gradient-to-br from-black via-black to-red-700 text-white"
+      style={{
+        clipPath:
+          "polygon(0 0, 100% 0, 100% calc(100% - 2.5vw), 80% 100%, 40% calc(100% - 5vw), 0% 100%)",
+      }}
     >
       <div className="flex flex-col flex-wrap justify-evenly gap-8 break-words">
         <h1>{t("name")}</h1>
@@ -38,7 +38,15 @@ export default function Presentation() {
         alt="Profile picture"
         width={250}
         height={250}
-        className={styles.profile}
+        className="object-cover mx-4 rounded-full"
+        style={{
+          WebkitMaskImage:
+            "radial-gradient(circle, black, rgba(0,0,0,0.8) 50%, rgba(0,0,0,0) 75%)",
+          maskImage:
+            "radial-gradient(ellipse at center, black 80%, transparent 100%)",
+          clipPath:
+            "polygon(50% 0%, 90% 20%, 100% 60%, 75% 100%, 25% 100%, 0% 60%, 10% 20%)",
+        }}
       />
     </div>
   );

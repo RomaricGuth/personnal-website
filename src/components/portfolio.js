@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "./image";
-import styles from "../styles/portfolio.module.css";
 import { useTranslations, useLocale } from "next-intl";
 import Button, { buttonModes } from "./button";
 import { technos } from "../utils/technos";
@@ -38,14 +37,19 @@ export default function Portfolio() {
   ];
 
   return (
-    <div className={styles.container}>
+    <div className="px-[5%]">
       <h2 className="mb-16">{t("recentWork")}</h2>
-      <div className={styles.grid}>
-        {apps.map((app) => (
-          <div key={app.name} className={styles.app}>
-            <div className={styles.text}>
-              <h3 className={styles.title}>{app.name}</h3>
-              <div className={styles.description}>{app.description}</div>
+      <div className="flex flex-col gap-8 items-center">
+        {apps.map((app, index) => (
+          <div
+            key={app.name}
+            className={`w-full flex flex-wrap gap-8 ${
+              index % 2 === 1 ? "md:flex-row-reverse" : "flex-row"
+            }`}
+          >
+            <div className="flex flex-col flex-[2]">
+              <h3 className="text-4xl md:text-left text-center">{app.name}</h3>
+              <div className="mt-8">{app.description}</div>
               {app.bullets?.length > 0 && (
                 <ul className="mt-4">
                   {app.bullets?.map((hint, index) => (
@@ -55,32 +59,40 @@ export default function Portfolio() {
                   ))}
                 </ul>
               )}
-              <div className={styles["tech-stack"]}>
+              <div className="mt-8 font-bold text-center">
                 {t("techstack")}
-                <div className={styles.technos}>
+                <div className="flex flex-wrap justify-center items-center gap-8 mt-4">
                   {app.techs.map((techno) => (
-                    <div key={techno.name} className={styles["techno-item"]}>
+                    <div
+                      key={techno.name}
+                      className="flex flex-col items-center text-center text-sm"
+                    >
                       <Image
                         src={techno.logo}
                         width={50}
                         height={50}
                         alt={"logo " + techno.name}
-                        className={styles["techno-logo"]}
+                        className="mb-1"
                       />
                       {techno.name}
                     </div>
                   ))}
                 </div>
               </div>
-              {app.link ? (
-                <a href={app.link} className={styles["call-to-action"]}>
-                  <Button mode={buttonModes.OUTLINED} text={app.callToAction} />
-                </a>
-              ) : (
-                <h4 className={styles["call-to-action"]}>{app.callToAction}</h4>
-              )}
+              <div className="mt-16 text-center flex justify-center">
+                {app.link ? (
+                  <a href={app.link}>
+                    <Button
+                      mode={buttonModes.OUTLINED}
+                      text={app.callToAction}
+                    />
+                  </a>
+                ) : (
+                  <h4>{app.callToAction}</h4>
+                )}
+              </div>
             </div>
-            <div className={styles.image}>
+            <div className="relative flex-[5] aspect-video md:min-w-0 min-w-full">
               <Image
                 src={app.pictures[0]}
                 fill
