@@ -13,6 +13,7 @@ import planeat_en from "/public/assets/planeat_en.png";
 import echasses_catalog from "/public/assets/echasses_catalog.png";
 import echasses_command from "/public/assets/echasses_command.png";
 import Link from "next/link";
+import Motion from "./motion";
 
 export default function Portfolio() {
   const t = useTranslations("HomePage");
@@ -86,71 +87,74 @@ export default function Portfolio() {
       </h2>
       <div className="flex flex-col gap-20 items-center">
         {apps.map((app, index) => (
-          <div
-            key={app.name}
-            className={`w-full flex flex-wrap gap-12 flex-col items-center ${
-              index % 2 === 1 ? "lg:flex-row-reverse" : "lg:flex-row"
-            }`}
-          >
-            <div className="flex flex-col flex-[2] gap-8">
-              <h3 className="font-semibold text-center lg:text-left">
-                {app.name}
-              </h3>
-              <div>{app.description}</div>
-              <div className="lg:hidden">
+          <Motion animation="fadeIn" key={app.name}>
+            <div
+              className={`w-full flex flex-wrap gap-12 flex-col items-center ${
+                index % 2 === 1 ? "lg:flex-row-reverse" : "lg:flex-row"
+              }`}
+            >
+              <div className="flex flex-col flex-[2] gap-8">
+                <h3 className="font-semibold text-center lg:text-left">
+                  {app.name}
+                </h3>
+                <div>{app.description}</div>
+                <div className="lg:hidden">
+                  <ImageCarousel
+                    videos={app.videos}
+                    images={app.pictures}
+                    className="w-full lg:hidden mx-0"
+                  />
+                </div>
+                {app.bullets?.length > 0 && (
+                  <ul className="list-disc list-outside ms-6 space-y-1">
+                    {app.bullets?.map((hint, index) => (
+                      <li key={index}>{hint}</li>
+                    ))}
+                  </ul>
+                )}
+                <div className="font-semibold text-center">
+                  {t("techstack")}
+                  <div className="flex flex-wrap justify-center items-center gap-6 mt-6">
+                    {app.techs.map((techno) => (
+                      <div
+                        key={techno.name}
+                        className="flex flex-col items-center text-center text-sm hover:scale-110 transition-transform text-muted-foreground"
+                      >
+                        <Image
+                          src={techno.logo}
+                          width={45}
+                          height={45}
+                          alt={"logo " + techno.name}
+                          className="mb-2"
+                        />
+                        {techno.name}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                {app.callToAction && (
+                  <div className="text-center flex justify-center mt-8">
+                    {app.link ? (
+                      <Link href={app.link} target="_blank">
+                        <Button variant="outline">{app.callToAction}</Button>
+                      </Link>
+                    ) : (
+                      <h4 className="text-gray-500 italic">
+                        {app.callToAction}
+                      </h4>
+                    )}
+                  </div>
+                )}
+              </div>
+              <div className="flex-[3] h-full min-h-[400px] hidden lg:block self-center">
                 <ImageCarousel
-                  videos={app.videos}
                   images={app.pictures}
-                  className="w-full lg:hidden mx-0"
+                  videos={app.videos}
+                  className="w-full h-full"
                 />
               </div>
-              {app.bullets?.length > 0 && (
-                <ul className="list-disc list-outside ms-6 space-y-1">
-                  {app.bullets?.map((hint, index) => (
-                    <li key={index}>{hint}</li>
-                  ))}
-                </ul>
-              )}
-              <div className="font-semibold text-center">
-                {t("techstack")}
-                <div className="flex flex-wrap justify-center items-center gap-6 mt-6">
-                  {app.techs.map((techno) => (
-                    <div
-                      key={techno.name}
-                      className="flex flex-col items-center text-center text-sm hover:scale-110 transition-transform text-muted-foreground"
-                    >
-                      <Image
-                        src={techno.logo}
-                        width={45}
-                        height={45}
-                        alt={"logo " + techno.name}
-                        className="mb-2"
-                      />
-                      {techno.name}
-                    </div>
-                  ))}
-                </div>
-              </div>
-              {app.callToAction && (
-                <div className="text-center flex justify-center mt-8">
-                  {app.link ? (
-                    <Link href={app.link} target="_blank">
-                      <Button variant="outline">{app.callToAction}</Button>
-                    </Link>
-                  ) : (
-                    <h4 className="text-gray-500 italic">{app.callToAction}</h4>
-                  )}
-                </div>
-              )}
             </div>
-            <div className="flex-[3] h-full min-h-[400px] hidden lg:block self-center">
-              <ImageCarousel
-                images={app.pictures}
-                videos={app.videos}
-                className="w-full h-full"
-              />
-            </div>
-          </div>
+          </Motion>
         ))}
       </div>
     </div>

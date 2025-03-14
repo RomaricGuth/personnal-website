@@ -3,6 +3,7 @@
 import Image from "./image";
 import { useTranslations } from "next-intl";
 import { Button } from "./ui/button";
+import Motion from "./motion";
 
 export default function LastCall() {
   const t = useTranslations("HomePage");
@@ -42,7 +43,9 @@ export default function LastCall() {
 
   return (
     <div>
-      <h3>{t("workTogether")}</h3>
+      <Motion animation="slideIn" transition={{ delay: 0.5 }}>
+        <h3>{t("workTogether")}</h3>
+      </Motion>
       <div className="flex flex-col justify-center gap-4 mt-8">
         {contactMedias.map((media) => (
           <div key={media.name} className="flex flex-row items-center gap-4">
@@ -67,7 +70,9 @@ export default function LastCall() {
         ))}
       </div>
 
-      <h3 className="mt-16 mb-8">{t("knowMore")}</h3>
+      <Motion animation="slideIn" transition={{ delay: 0.5 }}>
+        <h3 className="mt-16 mb-8">{t("knowMore")}</h3>
+      </Motion>
       <div className="flex flex-col gap-4 mb-8">
         {otherMedias.map((media) => (
           <div key={media.name} className="flex flex-row items-center gap-4">
