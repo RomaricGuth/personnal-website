@@ -37,12 +37,12 @@ export default function Footer() {
         </div>
         <div className="flex flex-col flex-1 items-center order-2 sm:order-3">
           <div className="text-lg font-bold">{t("navigation")}</div>
-          <div className="mt-2 flex flex-col items-center sm:items-start">
+          <div className="mt-2 flex flex-col items-center sm:items-start group">
             {menuSections.map((section) => (
               <a
                 key={section.name}
                 href={section.link}
-                className="underline hover:opacity-50"
+                className="underline transition-opacity duration-300 ease-in-out hover:opacity-100 group-hover:opacity-30"
               >
                 {tCommon(section.name)}
               </a>
@@ -50,7 +50,7 @@ export default function Footer() {
           </div>
         </div>
       </div>
-      <div>Copyright © 2023 Romaric Guth</div>
+      <div>Copyright © {new Date().getFullYear()} Romaric Guth</div>
     </div>
   );
 }

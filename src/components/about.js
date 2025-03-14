@@ -1,5 +1,6 @@
 "use client";
 
+import { richTextTags } from "@/i18n/richTextTags";
 import Image from "./image";
 import { useTranslations } from "next-intl";
 
@@ -27,7 +28,7 @@ export default function About() {
           height={30}
         />
       </div>
-      <p className="text-justify">{t("story")}</p>
+      <p>{t.markup("story", richTextTags)}</p>
     </div>
   );
 }

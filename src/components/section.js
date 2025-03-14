@@ -3,7 +3,11 @@ export default function Section(props) {
   return (
     <div
       {...rest}
-      className={dense ? "px-8 py-16" : "py-16 px-8 md:px-16 lg:px-[20%]"}
+      className={
+        dense
+          ? "py-8 sm:py-16 px-8 lg:px-16 xl:px-32"
+          : "py-8 sm:py-16 px-8 md:px-16 lg:px-[20%]"
+      }
     >
       {children}
     </div>

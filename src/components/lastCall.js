@@ -2,7 +2,7 @@
 
 import Image from "./image";
 import { useTranslations } from "next-intl";
-import Button, { buttonModes } from "./button";
+import { Button } from "./ui/button";
 
 export default function LastCall() {
   const t = useTranslations("HomePage");
@@ -91,7 +91,7 @@ export default function LastCall() {
         ))}
       </div>
       <a href="https://romaricguth.github.io/resume/?position=Frontend+Developer">
-        <Button text={t("checkResume")} mode={buttonModes.OUTLINED} />
+        <Button variant="outline">{t("checkResume")}</Button>
       </a>
     </div>
   );

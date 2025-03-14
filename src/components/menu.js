@@ -26,7 +26,7 @@ export default function Menu(props) {
 
   return (
     <div
-      className={`flex flex-col md:flex-row items-center gap-x-8 gap-y-4 ${props.className}`}
+      className={`flex flex-col md:flex-row items-center gap-x-8 gap-y-4 group ${props.className}`}
     >
       {menuSections.map((section) => (
         <a
