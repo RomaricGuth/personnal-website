@@ -85,7 +85,7 @@ export default function Portfolio() {
       <h2 className="text-4xl font-bold text-center mb-20">
         {t("recentWork")}
       </h2>
-      <div className="flex flex-col gap-20 items-center">
+      <div className="flex flex-col gap-20">
         {apps.map((app, index) => (
           <Motion animation="fadeIn" key={app.name}>
             <div
