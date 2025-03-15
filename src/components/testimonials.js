@@ -11,8 +11,7 @@ export default function Testimonials() {
       picture: "/assets/thomas-landais.jpeg",
       linkedin: "https://www.linkedin.com/in/thomas-landais",
       job: t("thomasJob"),
-      comment:
-        "Pendant 3 ans, nous avons travaillé en collaboration avec Romaric sur une plateforme de donnée. Il est curieux, creuse ses sujets en autonomie et c'est quelqu'un avec lequel il est très agréable de travailler.",
+      comment: t("thomasTestimonial"),
     },
   ];
 
