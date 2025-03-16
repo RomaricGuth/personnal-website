@@ -1,6 +1,6 @@
 "use client";
 
-import { animate, motion } from "framer-motion";
+import { motion } from "motion/react";
 
 function deepMerge(target, source) {
   for (const key in source) {
@@ -35,10 +35,10 @@ const animations = {
     viewport: { once: true, amount: 0.5 },
   },
   slideIn: {
+    initial: { opacity: 0, x: "-100%" },
+    whileInView: { opacity: 1, x: 0 },
     transition: { duration: 0.8, type: "spring", bounce: 0.3 },
-    initial: { opacity: 0, transform: "translateX(-100%)" },
-    whileInView: { opacity: 1, transform: "translateX(0%)" },
-    viewport: { once: true, amount: 0.2 },
+    viewport: { once: true, margin: "0px 0px 0px 100%" },
   },
 };
 
