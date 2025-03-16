@@ -2,6 +2,7 @@
 
 import { useTranslations } from "next-intl";
 import Image from "./image";
+import Link from "next/link";
 
 export default function Testimonials() {
   const t = useTranslations("HomePage");
@@ -38,9 +39,10 @@ export default function Testimonials() {
               &rdquo;
             </span>
           </blockquote>
-          <a
+          <Link
             href={testimonial.linkedin}
             className="flex flex-row items-center gap-2"
+            target="_blank"
           >
             <cite className="font-bold">{testimonial.author}</cite>
             <Image
@@ -49,7 +51,7 @@ export default function Testimonials() {
               height={20}
               alt="Linkedin logo"
             />
-          </a>
+          </Link>
           <p className="mt-2">{testimonial.job}</p>
         </div>
       ))}

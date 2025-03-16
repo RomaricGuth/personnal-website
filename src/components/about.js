@@ -6,16 +6,6 @@ import { useTranslations } from "next-intl";
 
 export default function About() {
   const t = useTranslations("HomePage");
-  const needs = [
-    {
-      text: t("need1"),
-      why: t("need1Explanation"),
-    },
-    {
-      text: t("need2"),
-      why: t("need2Explanation"),
-    },
-  ];
 
   return (
     <div>

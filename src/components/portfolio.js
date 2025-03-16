@@ -63,7 +63,7 @@ export default function Portfolio() {
           alt: t("echassesCommandAlt"),
         },
       ],
-      link: "https://dev.e-chasses.fr",
+      link: "https://dev.e-chasses.com",
       callToAction: t("echassesCTA"),
     },
     {

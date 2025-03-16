@@ -4,6 +4,7 @@ import Image from "./image";
 import ContactButton from "./contactButton";
 import { useTranslations } from "next-intl";
 import { menuSections } from "./menu";
+import Link from "next/link";
 
 export default function Footer() {
   const t = useTranslations("Footer");
@@ -22,9 +23,10 @@ export default function Footer() {
         </div>
         <div className="flex flex-col flex-1 justify-center items-center order-1 sm:order-2 my-4">
           <ContactButton />
-          <a
+          <Link
             href="https://www.linkedin.com/in/guth"
             className="underline mt-4 flex items-center gap-2"
+            target="_blank"
           >
             {t("followMe")}
             <Image
@@ -33,7 +35,7 @@ export default function Footer() {
               height={20}
               alt="linkedin logo"
             />
-          </a>
+          </Link>
         </div>
         <div className="flex flex-col flex-1 items-center order-2 sm:order-3">
           <div className="text-lg font-bold">{t("navigation")}</div>

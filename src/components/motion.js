@@ -57,7 +57,5 @@ export default function Motion({ children, animation, ...props }) {
     );
   }
 
-  console.log(animation, compiledProps);
-
   return <motion.div {...compiledProps}>{children}</motion.div>;
 }

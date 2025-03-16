@@ -4,6 +4,7 @@ import Image from "./image";
 import { useTranslations } from "next-intl";
 import { Button } from "./ui/button";
 import Motion from "./motion";
+import Link from "next/link";
 
 export default function LastCall() {
   const t = useTranslations("HomePage");
@@ -33,12 +34,6 @@ export default function LastCall() {
       image: "/assets/github.png",
       text: t("githubExplanation"),
     },
-    {
-      name: "Leetcode",
-      url: "https://leetcode.com/romaricguth/",
-      image: "/assets/leetcode.png",
-      text: t("leetcodeExplanation"),
-    },
   ];
 
   return (
@@ -49,22 +44,24 @@ export default function LastCall() {
       <div className="flex flex-col justify-center gap-4 mt-8">
         {contactMedias.map((media) => (
           <div key={media.name} className="flex flex-row items-center gap-4">
-            <a href={media.url} key={media.name}>
-              <Image
-                key={media.name}
-                src={media.image}
-                alt={media.name}
-                width={30}
-                height={30}
-                className="min-w-[30px]"
-              />
-            </a>
+            <Image
+              key={media.name}
+              src={media.image}
+              alt={media.name}
+              width={30}
+              height={30}
+              className="min-w-[30px]"
+            />
             <div className="truncate">
               {media.name}
               {" : "}
-              <a href={media.url} className="inline underline">
+              <Link
+                href={media.url}
+                className="inline underline"
+                target="_blank"
+              >
                 {media.urlAlias ?? media.url}
-              </a>
+              </Link>
             </div>
           </div>
         ))}
@@ -76,28 +73,33 @@ export default function LastCall() {
       <div className="flex flex-col gap-4 mb-8">
         {otherMedias.map((media) => (
           <div key={media.name} className="flex flex-row items-center gap-4">
-            <a href={media.url}>
-              <Image
-                key={media.name}
-                src={media.image}
-                alt={media.name}
-                width={30}
-                height={30}
-                className="min-w-[30px]"
-              />
-            </a>
+            <Image
+              key={media.name}
+              src={media.image}
+              alt={media.name}
+              width={30}
+              height={30}
+              className="min-w-[30px]"
+            />
             <div>
               {media.text}
-              <a href={media.url} className="inline underline">
+              <Link
+                href={media.url}
+                className="inline underline"
+                target="_blank"
+              >
                 {media.name}
-              </a>
+              </Link>
             </div>
           </div>
         ))}
       </div>
-      <a href="https://romaricguth.github.io/resume/?position=Frontend+Developer">
+      <Link
+        href="https://romaricguth.github.io/resume/?position=Software+Engineer"
+        target="_blank"
+      >
         <Button variant="outline">{t("checkResume")}</Button>
-      </a>
+      </Link>
     </div>
   );
 }

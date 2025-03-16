@@ -23,7 +23,7 @@ export async function generateMetadata({ params }) {
   const t = await getTranslations({ locale });
 
   return {
-    title: "Romaric Guth",
+    title: t("metaTitle"),
     description: t("metaDescription"),
   };
 }
