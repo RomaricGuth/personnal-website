@@ -35,4 +35,8 @@ export const technos = Object.freeze({
     name: "Strapi",
     logo: "/assets/strapi.png",
   },
+  PAYLOAD: {
+    name: "Payload CMS",
+    logo: "/assets/payload.png",
+  },
 });

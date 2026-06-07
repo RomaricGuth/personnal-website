@@ -1,14 +1,17 @@
 "use client";
 
+import { Link as LocaleLink } from "@/i18n/navigation";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
-import { Link as LocaleLink } from "@/i18n/navigation";
+import { FileText, Mail } from "lucide-react";
 import Image from "./image";
 import Motion from "./motion";
 import { Button } from "./ui/button";
 
 export default function LastCall() {
   const t = useTranslations("HomePage");
+  const tCommon = useTranslations("Common");
+
   const contactMedias = [
     {
       name: "Mail",
@@ -38,49 +41,58 @@ export default function LastCall() {
   ];
 
   return (
-    <div>
+    <div className="flex flex-col items-center text-center">
       <Motion animation="slideIn" transition={{ delay: 0.5 }}>
         <h3>{t("workTogether")}</h3>
       </Motion>
-      <div className="flex flex-col justify-center gap-4 mt-8">
+
+      <div className="mt-8 flex w-full max-w-md flex-col gap-4 sm:flex-row">
+        <LocaleLink href="/contact" className="flex-1">
+          <Button className="w-full">
+            <Mail className="size-4" />
+            {tCommon("contact")}
+          </Button>
+        </LocaleLink>
+        <LocaleLink href="/cv" className="flex-1">
+          <Button variant="outline" className="w-full">
+            <FileText className="size-4" />
+            {t("checkResume")}
+          </Button>
+        </LocaleLink>
+      </div>
+
+      <div className="mt-10 flex flex-wrap items-center justify-center gap-x-8 gap-y-4">
         {contactMedias.map((media) => (
-          <div key={media.name} className="flex flex-row items-center gap-4">
+          <Link
+            key={media.name}
+            href={media.url}
+            target="_blank"
+            className="flex items-center gap-2 transition-opacity hover:opacity-70"
+          >
             <Image
-              key={media.name}
               src={media.image}
               alt={media.name}
-              width={30}
-              height={30}
-              className="min-w-[30px]"
+              width={24}
+              height={24}
+              className="min-w-[24px]"
             />
-            <div className="truncate">
-              {media.name}
-              {" : "}
-              <Link
-                href={media.url}
-                className="inline underline"
-                target="_blank"
-              >
-                {media.urlAlias ?? media.url}
-              </Link>
-            </div>
-          </div>
+            <span className="truncate">{media.urlAlias ?? media.name}</span>
+          </Link>
         ))}
       </div>
 
       <Motion animation="slideIn" transition={{ delay: 0.5 }}>
-        <h3 className="mt-16 mb-8">{t("knowMore")}</h3>
+        <h3 className="mt-16">{t("knowMore")}</h3>
       </Motion>
-      <div className="flex flex-col gap-4 mb-8">
+      <div className="mt-6 flex flex-col items-center gap-4">
         {otherMedias.map((media) => (
-          <div key={media.name} className="flex flex-row items-center gap-4">
+          <div key={media.name} className="flex items-center gap-2">
             <Image
-              key={media.name}
               src={media.image}
               alt={media.name}
-              width={30}
-              height={30}
-              className="min-w-[30px]"
+              width={24}
+              height={24}
+              className="min-w-[24px]"
             />
             <div>
               {media.text}
@@ -95,9 +107,6 @@ export default function LastCall() {
           </div>
         ))}
       </div>
-      <LocaleLink href="/cv" target="_blank">
-        <Button variant="outline">{t("checkResume")}</Button>
-      </LocaleLink>
     </div>
   );
 }

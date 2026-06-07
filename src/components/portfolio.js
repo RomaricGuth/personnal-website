@@ -1,19 +1,20 @@
 "use client";
 
-import Image from "./image";
-import { useTranslations, useLocale } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
+import Link from "next/link";
 import { technos } from "../utils/technos";
-import { Button } from "./ui/button";
+import Image from "./image";
 import ImageCarousel from "./image-carousel";
-import mathadata from "/public/assets/mathadata_fr.png";
-import mathadata_en from "/public/assets/mathadata_en.png";
-import notebook from "/public/assets/notebook.png";
-import planeat from "/public/assets/planeat_fr.png";
-import planeat_en from "/public/assets/planeat_en.png";
+import Motion from "./motion";
+import { Button } from "./ui/button";
+import bridgetonic_booking from "/public/assets/bridgetonic_booking.png";
+import bridgetonic_catalog from "/public/assets/bridgetonic_catalog.png";
+import bridgetonic_detail from "/public/assets/bridgetonic_detail.png";
 import echasses_catalog from "/public/assets/echasses_catalog.png";
 import echasses_command from "/public/assets/echasses_command.png";
-import Link from "next/link";
-import Motion from "./motion";
+import mathadata_en from "/public/assets/mathadata_en.png";
+import mathadata from "/public/assets/mathadata_fr.png";
+import notebook from "/public/assets/notebook.png";
 
 export default function Portfolio() {
   const t = useTranslations("HomePage");
@@ -23,8 +24,20 @@ export default function Portfolio() {
     {
       name: "MathAData",
       description: t("mathaDataDescription"),
-      bullets: [t("mathaData1"), t("mathaData2"), t("mathaData3")],
-      techs: [technos.NEXT, technos.TAILWIND, technos.PYTHON, technos.DOCKER],
+      bullets: [
+        t("mathaData1"),
+        t("mathaData2"),
+        t("mathaData3"),
+        t("mathaData4"),
+        t("mathaData5"),
+      ],
+      techs: [
+        technos.NEXT,
+        technos.TAILWIND,
+        technos.PAYLOAD,
+        technos.PYTHON,
+        technos.DOCKER,
+      ],
       pictures: [
         {
           src: notebook,
@@ -42,6 +55,28 @@ export default function Portfolio() {
       ],
       callToAction: t("mathaDataCTA"),
       link: "https://mathadata.fr",
+    },
+    {
+      name: "Bridge-Tonic",
+      description: t("bridgetonicDescription"),
+      bullets: [t("bridgetonic1"), t("bridgetonic2"), t("bridgetonic3")],
+      techs: [technos.NEXT, technos.TAILWIND, technos.PAYLOAD, technos.STRIPE],
+      pictures: [
+        {
+          src: bridgetonic_catalog,
+          alt: t("bridgetonicCatalogAlt"),
+        },
+        {
+          src: bridgetonic_detail,
+          alt: t("bridgetonicDetailAlt"),
+        },
+        {
+          src: bridgetonic_booking,
+          alt: t("bridgetonicBookingAlt"),
+        },
+      ],
+      link: "https://bridgetonic.com",
+      callToAction: t("bridgetonicCTA"),
     },
     {
       name: "E-chasses",
@@ -66,18 +101,6 @@ export default function Portfolio() {
       link: "https://e-chasses.com",
       callToAction: t("echassesCTA"),
     },
-    {
-      name: "Planeat",
-      description: t("planeatDescription"),
-      bullets: [t("planeat1"), t("planeat2"), t("planeat3")],
-      techs: [technos.REACT_NATIVE, technos.REDUX],
-      pictures: [
-        {
-          src: locale === "en" ? planeat_en : planeat,
-          alt: t("planeatAlt"),
-        },
-      ],
-    },
   ];
 
   return (
@@ -89,7 +112,7 @@ export default function Portfolio() {
         {apps.map((app, index) => (
           <Motion animation="fadeIn" key={app.name}>
             <div
-              className={`w-full flex flex-wrap gap-12 flex-col items-center ${
+              className={`w-full flex flex-wrap gap-12 flex-col items-center rounded-2xl border border-border bg-card p-6 sm:p-10 shadow-sm transition-shadow duration-300 hover:shadow-xl ${
                 index % 2 === 1 ? "lg:flex-row-reverse" : "lg:flex-row"
               }`}
             >

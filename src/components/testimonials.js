@@ -21,7 +21,7 @@ export default function Testimonials() {
       {testimonials.map((testimonial) => (
         <div
           key={testimonial.author}
-          className="flex flex-1 flex-col items-center text-center"
+          className="flex flex-1 flex-col items-center text-center rounded-2xl border border-border bg-card px-6 py-10 sm:px-12 shadow-sm max-w-2xl"
         >
           <Image
             src={testimonial.picture}

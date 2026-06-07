@@ -4,20 +4,16 @@ import { useTranslations, useLocale } from "next-intl";
 
 export const menuSections = [
   {
-    name: "about",
-    link: "#about",
-  },
-  {
     name: "portfolio",
-    link: "#portfolio",
+    link: "",
   },
   {
-    name: "testimonials",
-    link: "#testimonials",
+    name: "resume",
+    link: "/cv",
   },
   {
     name: "contact",
-    link: "#contact",
+    link: "/contact",
   },
 ];
 
@@ -32,7 +28,7 @@ export default function Menu(props) {
       {menuSections.map((section) => (
         <a
           key={section.name}
-          className="text-white text-xl transition-opacity duration-300 ease-in-out hover:opacity-100 group-hover:opacity-30"
+          className="text-white text-lg transition-opacity duration-300 ease-in-out hover:opacity-100 group-hover:opacity-30"
           href={`/${locale}${section.link}`}
         >
           {t(section.name)}
