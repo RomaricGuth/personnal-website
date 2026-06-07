@@ -1,6 +1,6 @@
 "use client";
 
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 
 export const menuSections = [
   {
@@ -23,6 +23,7 @@ export const menuSections = [
 
 export default function Menu(props) {
   const t = useTranslations("Common");
+  const locale = useLocale();
 
   return (
     <div
@@ -32,7 +33,7 @@ export default function Menu(props) {
         <a
           key={section.name}
           className="text-white text-xl transition-opacity duration-300 ease-in-out hover:opacity-100 group-hover:opacity-30"
-          href={section.link}
+          href={`/${locale}${section.link}`}
         >
           {t(section.name)}
         </a>

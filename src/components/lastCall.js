@@ -1,10 +1,11 @@
 "use client";
 
-import Image from "./image";
 import { useTranslations } from "next-intl";
-import { Button } from "./ui/button";
-import Motion from "./motion";
 import Link from "next/link";
+import { Link as LocaleLink } from "@/i18n/navigation";
+import Image from "./image";
+import Motion from "./motion";
+import { Button } from "./ui/button";
 
 export default function LastCall() {
   const t = useTranslations("HomePage");
@@ -94,12 +95,9 @@ export default function LastCall() {
           </div>
         ))}
       </div>
-      <Link
-        href="https://romaricguth.github.io/resume/?position=Software+Engineer"
-        target="_blank"
-      >
+      <LocaleLink href="/cv" target="_blank">
         <Button variant="outline">{t("checkResume")}</Button>
-      </Link>
+      </LocaleLink>
     </div>
   );
 }

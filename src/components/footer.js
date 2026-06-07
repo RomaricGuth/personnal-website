@@ -2,13 +2,14 @@
 
 import Image from "./image";
 import ContactButton from "./contactButton";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 import { menuSections } from "./menu";
 import Link from "next/link";
 
 export default function Footer() {
   const t = useTranslations("Footer");
   const tCommon = useTranslations("Common");
+  const locale = useLocale();
 
   return (
     <div className="text-white bg-black py-4 flex flex-col flex-1 items-center gap-4">
@@ -43,7 +44,7 @@ export default function Footer() {
             {menuSections.map((section) => (
               <a
                 key={section.name}
-                href={section.link}
+                href={`/${locale}${section.link}`}
                 className="underline transition-opacity duration-300 ease-in-out hover:opacity-100 group-hover:opacity-30"
               >
                 {tCommon(section.name)}
