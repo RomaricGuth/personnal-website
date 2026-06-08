@@ -20,10 +20,9 @@ export async function sendContactMessage(prevState, formData) {
   if (!email) errors.email = "errorRequired";
   else if (!EMAIL_RE.test(email)) errors.email = "errorEmail";
   if (!message) errors.message = "errorRequired";
-  else if (message.length < 10) errors.message = "errorTooShort";
 
   if (Object.keys(errors).length > 0) {
-    return { status: "error", errors };
+    return { status: "error", errors, values: { name, email, subject, message } };
   }
 
   const apiKey = process.env.BREVO_API_KEY;

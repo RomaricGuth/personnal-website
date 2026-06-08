@@ -31,6 +31,7 @@ export default function ContactForm() {
     initialState
   );
   const errors = state.errors || {};
+  const values = state.values || {};
 
   if (state.status === "success") {
     return (
@@ -70,6 +71,7 @@ export default function ContactForm() {
               id="name"
               name="name"
               type="text"
+              defaultValue={values.name}
               placeholder={t("namePlaceholder")}
               aria-invalid={!!errors.name}
               className={inputClass}
@@ -82,6 +84,7 @@ export default function ContactForm() {
               id="email"
               name="email"
               type="email"
+              defaultValue={values.email}
               placeholder={t("emailPlaceholder")}
               aria-invalid={!!errors.email}
               className={inputClass}
@@ -95,6 +98,7 @@ export default function ContactForm() {
           id="subject"
           name="subject"
           type="text"
+          defaultValue={values.subject}
           placeholder={t("subjectPlaceholder")}
           className={inputClass}
         />
@@ -109,6 +113,7 @@ export default function ContactForm() {
           id="message"
           name="message"
           rows={6}
+          defaultValue={values.message}
           placeholder={t("messagePlaceholder")}
           aria-invalid={!!errors.message}
           className={`${inputClass} resize-y`}
