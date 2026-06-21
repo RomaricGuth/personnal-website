@@ -11,8 +11,9 @@ WORKDIR /app
 
 # Install dependencies based on the lockfile.
 COPY package.json package-lock.json* ./
-# postinstall runs `playwright install chromium`, populating /root/.cache/ms-playwright.
-RUN npm ci
+# The base image already ships Chromium in /ms-playwright, so skip the
+# postinstall browser download (it would re-fetch into the same path).
+RUN npm ci --ignore-scripts
 
 # Rebuild the source code only when needed
 FROM base AS builder
@@ -38,18 +39,16 @@ RUN mkdir .next && chown pwuser:pwuser .next
 COPY --from=builder --chown=pwuser:pwuser /app/.next/standalone ./
 COPY --from=builder --chown=pwuser:pwuser /app/.next/static ./.next/static
 
-# Chromium downloaded by Playwright at install time. The base image ships the
-# system libraries; we only need the browser binary the app launches at runtime.
-COPY --from=deps /root/.cache/ms-playwright /home/pwuser/.cache/ms-playwright
-RUN chown -R pwuser:pwuser /home/pwuser/.cache
-ENV PLAYWRIGHT_BROWSERS_PATH=/home/pwuser/.cache/ms-playwright
+# Chromium for the /api/cv-pdf route is already provided by the base image in
+# /ms-playwright (with PLAYWRIGHT_BROWSERS_PATH preset), so nothing to copy.
 
 USER pwuser
 
 EXPOSE 3000
 
 ENV PORT=3000
+ENV HOSTNAME=0.0.0.0
 
 # server.js is created by next build from the standalone output
 # https://nextjs.org/docs/pages/api-reference/next-config-js/output
-CMD HOSTNAME="0.0.0.0" node server.js
+CMD ["node", "server.js"]
