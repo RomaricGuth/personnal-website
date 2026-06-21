@@ -1,0 +1,31 @@
+version: "3.9"
+
+services:
+  next-app:
+    image: ghcr.io/romaricguth/personnal-website:prod
+    restart: always
+    env_file:
+      - .env
+    networks:
+      - proxy  # Connect to Traefik
+    deploy:
+      labels:
+        - "traefik.enable=true"
+        # Main router for romaricguth.com
+        - "traefik.http.routers.personnal-website.rule=Host(`romaricguth.com`)"
+        - "traefik.http.routers.personnal-website.entrypoints=websecure"
+        - "traefik.http.routers.personnal-website.tls.certresolver=letsencrypt"
+        - "traefik.http.services.personnal-website-service.loadbalancer.server.port=3000"
+        # Redirect router for www variant
+        - "traefik.http.routers.personnal-website-redirect.rule=Host(`www.romaricguth.com`)"
+        - "traefik.http.routers.personnal-website-redirect.entrypoints=websecure"
+        - "traefik.http.routers.personnal-website-redirect.tls.certresolver=letsencrypt"
+        - "traefik.http.routers.personnal-website-redirect.middlewares=personnal-website-redirect"
+        - "traefik.http.routers.personnal-website-redirect.service=noop@internal"
+        - "traefik.http.middlewares.personnal-website-redirect.redirectregex.regex=^https://(www\\.)?(romaricguth\\.com)(.*)"
+        - "traefik.http.middlewares.personnal-website-redirect.redirectregex.replacement=https://romaricguth.com$${3}"
+        - "traefik.http.middlewares.personnal-website-redirect.redirectregex.permanent=true"
+
+networks:
+  proxy:
+    external: true  # Traefik's external network

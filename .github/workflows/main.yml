@@ -1,0 +1,81 @@
+name: ci
+
+on:
+  push:
+    branches:
+      - "prod"
+
+env:
+  REGISTRY: ghcr.io
+  IMAGE_NAME: ${{ github.repository }}
+
+permissions:
+  contents: read
+  packages: write
+
+jobs:
+  docker:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: create env file
+        run: |
+          touch .env
+          echo '${{ toJSON(secrets) }}' | jq -r 'with_entries(select(.key | startswith("GH_ACTION_") | not)) | keys[] as $k | "\($k)=\(.[$k])"' >> .env
+          echo '${{ toJSON(vars) }}' | jq -r 'with_entries(select(.key | startswith("GH_ACTION_") | not)) | keys[] as $k | "\($k)=\(.[$k])"' >> .env
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v3
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+      - name: Login to GitHub Container Registry
+        uses: docker/login-action@v3
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor}}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - name: Extract metadata (tags, labels) for Docker
+        id: meta
+        uses: docker/metadata-action@v5
+        with:
+          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+      - name: Build and push
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: docker
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Copy docker-compose.yml to server
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ vars.GH_ACTION_SERVER_HOST }}
+          username: ${{ vars.GH_ACTION_SERVER_USER }}
+          key: ${{ secrets.GH_ACTION_SSH_PRIVATE_KEY }}
+          passphrase: ${{ secrets.GH_ACTION_SSH_PASSPHRASE }}
+          source: "./docker-compose.yml"
+          target: "~/docker/personnal-website/"
+
+      # SSH into your deployment server
+      - name: Deploy to Server via SSH
+        uses: appleboy/ssh-action@v1.1.0
+        with:
+          host: ${{ vars.GH_ACTION_SERVER_HOST }}
+          username: ${{ vars.GH_ACTION_SERVER_USER }}
+          key: ${{ secrets.GH_ACTION_SSH_PRIVATE_KEY }}
+          passphrase: ${{ secrets.GH_ACTION_SSH_PASSPHRASE }}
+          debug: true
+          script: |
+            cd docker/personnal-website
+            docker-compose -f docker-compose.yml pull
+            docker stack deploy personnal-website -c docker-compose.yml --with-registry-auth
