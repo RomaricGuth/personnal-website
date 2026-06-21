@@ -27,26 +27,24 @@ WORKDIR /app
 
 ENV NODE_ENV=production
 
-RUN groupadd --system --gid 1001 nodejs \
-  && useradd --system --uid 1001 --gid nodejs nextjs
-
+# Reuse pwuser, the non-root user the Playwright base image already ships.
 COPY --from=builder /app/public ./public
 
 # Set the correct permission for prerender cache
-RUN mkdir .next && chown nextjs:nodejs .next
+RUN mkdir .next && chown pwuser:pwuser .next
 
 # Automatically leverage output traces to reduce image size
 # https://nextjs.org/docs/advanced-features/output-file-tracing
-COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
-COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
+COPY --from=builder --chown=pwuser:pwuser /app/.next/standalone ./
+COPY --from=builder --chown=pwuser:pwuser /app/.next/static ./.next/static
 
 # Chromium downloaded by Playwright at install time. The base image ships the
 # system libraries; we only need the browser binary the app launches at runtime.
-COPY --from=deps /root/.cache/ms-playwright /home/nextjs/.cache/ms-playwright
-RUN chown -R nextjs:nodejs /home/nextjs/.cache
-ENV PLAYWRIGHT_BROWSERS_PATH=/home/nextjs/.cache/ms-playwright
+COPY --from=deps /root/.cache/ms-playwright /home/pwuser/.cache/ms-playwright
+RUN chown -R pwuser:pwuser /home/pwuser/.cache
+ENV PLAYWRIGHT_BROWSERS_PATH=/home/pwuser/.cache/ms-playwright
 
-USER nextjs
+USER pwuser
 
 EXPOSE 3000
 

@@ -19,11 +19,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: create env file
-        run: |
-          touch .env
-          echo '${{ toJSON(secrets) }}' | jq -r 'with_entries(select(.key | startswith("GH_ACTION_") | not)) | keys[] as $k | "\($k)=\(.[$k])"' >> .env
-          echo '${{ toJSON(vars) }}' | jq -r 'with_entries(select(.key | startswith("GH_ACTION_") | not)) | keys[] as $k | "\($k)=\(.[$k])"' >> .env
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v3
       - name: Set up Docker Buildx
