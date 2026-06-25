@@ -4,7 +4,7 @@ export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
 export async function GET(request) {
-  const { searchParams, origin } = new URL(request.url);
+  const { searchParams } = new URL(request.url);
 
   const params = new URLSearchParams();
   for (const key of ["position", "email", "phone"]) {
@@ -14,7 +14,11 @@ export async function GET(request) {
 
   const lang = searchParams.get("lang") === "fr" ? "fr" : "en";
   const query = params.toString();
-  const target = `${origin}/${lang}/cv${query ? `?${query}` : ""}`;
+  // Render against the server itself instead of routing back out through the
+  // public domain (which forces a Traefik/TLS round-trip from inside the
+  // container). The locale comes from the URL path, so no Host header needed.
+  const internalOrigin = `http://127.0.0.1:${process.env.PORT || 3000}`;
+  const target = `${internalOrigin}/${lang}/cv${query ? `?${query}` : ""}`;
 
   const browser = await chromium.launch();
   try {
