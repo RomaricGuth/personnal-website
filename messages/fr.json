@@ -7,6 +7,13 @@
     "job2": "& Entrepreneur",
     "learnMore": "En savoir plus",
     "techstack": "Stack technique",
+    "bridgeboardsDescription": "Outil de génération de polycopiés de donnes de bridge",
+    "bridgeboards1": "Saisie rapide et simplifiée des jeux",
+    "bridgeboards2": "Export customisable en PDF, Word et formats bridge (PBN/LIN)",
+    "bridgeboardsEditorAlt": "Éditeur de donne Bridge Boards",
+    "bridgeboardsLibraryAlt": "Tableau de bord Bridge Boards avec cours et donnes",
+    "bridgeboardsExportAlt": "Aperçu et options d'export PDF Bridge Boards",
+    "bridgeboardsCTA": "Voir le site",
     "bridgetonicDescription": "Plateforme de réservation de voyages bridge",
     "bridgetonic1": "Création du site",
     "bridgetonic2": "Réservation en ligne",
@@ -130,4 +137,4 @@
     "exportPdf": "Exporter en PDF",
     "copyUrl": "Copier l'URL"
   }
-} 
+}

@@ -7,6 +7,12 @@ import Image from "./image";
 import ImageCarousel from "./image-carousel";
 import Motion from "./motion";
 import { Button } from "./ui/button";
+import bridgeboards_editor_en from "/public/assets/bridgeboards_editor_en.png";
+import bridgeboards_editor_fr from "/public/assets/bridgeboards_editor_fr.png";
+import bridgeboards_export_en from "/public/assets/bridgeboards_export_en.png";
+import bridgeboards_export_fr from "/public/assets/bridgeboards_export_fr.png";
+import bridgeboards_library_en from "/public/assets/bridgeboards_library_en.png";
+import bridgeboards_library_fr from "/public/assets/bridgeboards_library_fr.png";
 import bridgetonic_booking from "/public/assets/bridgetonic_booking.png";
 import bridgetonic_catalog from "/public/assets/bridgetonic_catalog.png";
 import bridgetonic_detail from "/public/assets/bridgetonic_detail.png";
@@ -55,6 +61,31 @@ export default function Portfolio() {
       ],
       callToAction: t("mathaDataCTA"),
       link: "https://mathadata.fr",
+    },
+    {
+      name: "Bridge Boards",
+      description: t("bridgeboardsDescription"),
+      bullets: [t("bridgeboards1"), t("bridgeboards2")],
+      techs: [technos.NEXT, technos.TAILWIND, technos.PAYLOAD],
+      pictures: [
+        {
+          src:
+            locale === "en" ? bridgeboards_editor_en : bridgeboards_editor_fr,
+          alt: t("bridgeboardsEditorAlt"),
+        },
+        {
+          src:
+            locale === "en" ? bridgeboards_export_en : bridgeboards_export_fr,
+          alt: t("bridgeboardsExportAlt"),
+        },
+        {
+          src:
+            locale === "en" ? bridgeboards_library_en : bridgeboards_library_fr,
+          alt: t("bridgeboardsLibraryAlt"),
+        },
+      ],
+      link: "https://bridge-boards.com",
+      callToAction: t("bridgeboardsCTA"),
     },
     {
       name: "Bridge-Tonic",
