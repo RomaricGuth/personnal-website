@@ -73,6 +73,26 @@ html {
   font-family: var(--font-body), Arial, sans-serif;
 }
 
+.profile-float {
+  animation: profile-float 5s ease-in-out infinite;
+}
+
+@keyframes profile-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .profile-float {
+    animation: none;
+  }
+}
+
 .dark {
   --background: oklch(0.145 0 0);
   --foreground: oklch(0.985 0 0);
@@ -160,4 +180,3 @@ html {
     @apply bg-background text-foreground;
   }
 }
-

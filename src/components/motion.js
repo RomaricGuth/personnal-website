@@ -40,6 +40,28 @@ const animations = {
     transition: { duration: 0.8, type: "spring", bounce: 0.3 },
     viewport: { once: true, margin: "0px 0px 0px 100%" },
   },
+  stagger: {
+    initial: "hidden",
+    whileInView: "visible",
+    variants: {
+      hidden: { opacity: 1 },
+      visible: {
+        opacity: 1,
+        transition: { staggerChildren: 0.12, delayChildren: 0.1 },
+      },
+    },
+    viewport: { once: true, amount: 0.15 },
+  },
+  staggerChild: {
+    variants: {
+      hidden: { opacity: 0, y: 14 },
+      visible: {
+        opacity: 1,
+        y: 0,
+        transition: { duration: 0.45, ease: "easeOut" },
+      },
+    },
+  },
 };
 
 export default function Motion({ children, animation, ...props }) {
