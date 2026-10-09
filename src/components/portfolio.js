@@ -141,72 +141,85 @@ export default function Portfolio() {
       </h2>
       <div className="flex flex-col gap-20">
         {apps.map((app, index) => (
-          <Motion animation="fadeIn" key={app.name}>
+          <Motion animation="stagger" key={app.name}>
             <div
               className={`w-full flex flex-wrap gap-12 flex-col items-center rounded-2xl border border-border bg-card p-6 sm:p-10 shadow-sm transition-shadow duration-300 hover:shadow-xl ${
                 index % 2 === 1 ? "lg:flex-row-reverse" : "lg:flex-row"
               }`}
             >
               <div className="flex flex-col flex-[2] gap-8">
-                <h3 className="font-semibold text-center lg:text-left">
-                  {app.name}
-                </h3>
-                <div>{app.description}</div>
-                <div className="lg:hidden">
+                <Motion animation="staggerChild">
+                  <h3 className="font-semibold text-center lg:text-left">
+                    {app.name}
+                  </h3>
+                </Motion>
+                <Motion animation="staggerChild">{app.description}</Motion>
+                <Motion animation="staggerChild" className="lg:hidden">
                   <ImageCarousel
                     videos={app.videos}
                     images={app.pictures}
                     className="w-full lg:hidden mx-0"
                   />
-                </div>
+                </Motion>
                 {app.bullets?.length > 0 && (
-                  <ul className="list-disc list-outside ms-6 space-y-1">
-                    {app.bullets?.map((hint, index) => (
-                      <li key={index}>{hint}</li>
-                    ))}
-                  </ul>
+                  <Motion animation="staggerChild">
+                    <ul className="list-disc list-outside ms-6 space-y-1">
+                      {app.bullets?.map((hint, index) => (
+                        <li key={index}>{hint}</li>
+                      ))}
+                    </ul>
+                  </Motion>
                 )}
-                <div className="font-semibold text-center">
-                  {t("techstack")}
-                  <div className="flex flex-wrap justify-center items-center gap-6 mt-6">
-                    {app.techs.map((techno) => (
-                      <div
-                        key={techno.name}
-                        className="flex flex-col items-center text-center text-sm hover:scale-110 transition-transform text-muted-foreground"
-                      >
-                        <Image
-                          src={techno.logo}
-                          width={45}
-                          height={45}
-                          alt={"logo " + techno.name}
-                          className="mb-2"
-                        />
-                        {techno.name}
-                      </div>
-                    ))}
+                <Motion animation="staggerChild">
+                  <div className="font-semibold text-center">
+                    {t("techstack")}
+                    <div className="flex flex-wrap justify-center items-center gap-6 mt-6">
+                      {app.techs.map((techno) => (
+                        <div
+                          key={techno.name}
+                          className="flex flex-col items-center text-center text-sm hover:scale-110 transition-transform text-muted-foreground"
+                        >
+                          <Image
+                            src={techno.logo}
+                            width={45}
+                            height={45}
+                            alt={"logo " + techno.name}
+                            className="mb-2"
+                          />
+                          {techno.name}
+                        </div>
+                      ))}
+                    </div>
                   </div>
-                </div>
+                </Motion>
                 {app.callToAction && (
-                  <div className="text-center flex justify-center mt-8">
-                    {app.link ? (
-                      <Link href={app.link} target="_blank">
-                        <Button variant="outline">{app.callToAction}</Button>
-                      </Link>
-                    ) : (
-                      <h4 className="text-gray-500 italic">
-                        {app.callToAction}
-                      </h4>
-                    )}
-                  </div>
+                  <Motion animation="staggerChild">
+                    <div className="text-center flex justify-center mt-8">
+                      {app.link ? (
+                        <Link href={app.link} target="_blank">
+                          <Button variant="outline">
+                            {app.callToAction}
+                          </Button>
+                        </Link>
+                      ) : (
+                        <h4 className="text-gray-500 italic">
+                          {app.callToAction}
+                        </h4>
+                      )}
+                    </div>
+                  </Motion>
                 )}
               </div>
-              <div className="flex-[3] h-full min-h-[400px] hidden lg:block self-center">
+              <Motion
+                animation="staggerChild"
+                className="flex-[3] h-full min-h-[400px] hidden lg:block self-center"
+              >
                 <ImageCarousel
                   images={app.pictures}
                   videos={app.videos}
                   className="w-full h-full"
                 />
-              </div>
+              </Motion>
             </div>
           </Motion>
         ))}

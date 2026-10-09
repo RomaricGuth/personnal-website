@@ -46,7 +46,7 @@ export default function Presentation() {
         src={profile}
         alt="Profile picture"
         height={400}
-        className="object-cover rounded-[6rem] shadow-xl shadow-red-900/30"
+        className="profile-float object-cover rounded-[6rem] shadow-xl shadow-red-900/30"
       />
     </div>
   );
