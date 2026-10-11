@@ -57,7 +57,7 @@ export default function CvDocument({ options = {} }) {
         <div className="absolute bottom-0 left-0 h-1 w-[38%] bg-[#b9e66b]" />
         <div className="relative z-10 min-w-0 flex-1">
           <div className="mb-2 text-[9px] font-semibold uppercase tracking-[0.25em] text-[#b9e66b]">{t("cvKicker")}</div>
-          <h1 className="m-0 text-[30px] font-bold leading-none tracking-[-0.04em] text-white">Romaric GUTH</h1>
+          <h1 className="m-0 text-[30px] font-bold leading-none tracking-[-0.04em] text-white">Romaric Guth</h1>
           <p className="mb-0 mt-2 text-[14px] font-medium leading-tight text-white/85">{position}</p>
           <div className="mt-4 flex flex-wrap gap-x-4 gap-y-1 text-[9px] text-white/80">
             <span className="flex items-center gap-1.5"><Mail size={11} className="text-[#b9e66b]" />{email}</span>
