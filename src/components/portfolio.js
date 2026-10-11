@@ -136,14 +136,14 @@ export default function Portfolio() {
 
   return (
     <div>
-      <h2 className="text-4xl font-bold text-center mb-20">
+      <h2 className="mb-12 text-center text-3xl font-bold tracking-tight sm:mb-16 sm:text-4xl">
         {t("recentWork")}
       </h2>
       <div className="flex flex-col gap-20">
         {apps.map((app, index) => (
           <Motion animation="fadeIn" key={app.name}>
             <div
-              className={`w-full flex flex-wrap gap-12 flex-col items-center rounded-2xl border border-border bg-card p-6 sm:p-10 shadow-sm transition-shadow duration-300 hover:shadow-xl ${
+              className={`w-full flex flex-wrap gap-12 flex-col items-center rounded-3xl border border-neutral-200 bg-white p-6 sm:p-10 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl ${
                 index % 2 === 1 ? "lg:flex-row-reverse" : "lg:flex-row"
               }`}
             >

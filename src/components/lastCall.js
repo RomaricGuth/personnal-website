@@ -41,7 +41,7 @@ export default function LastCall() {
   ];
 
   return (
-    <div className="flex flex-col items-center text-center">
+    <div className="mx-auto flex max-w-5xl flex-col items-center rounded-3xl border border-white/10 bg-white/[0.04] px-6 py-10 text-center sm:px-12 sm:py-14">
       <Motion animation="slideIn" transition={{ delay: 0.5 }}>
         <h3>{t("workTogether")}</h3>
       </Motion>

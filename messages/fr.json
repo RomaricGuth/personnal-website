@@ -2,10 +2,15 @@
   "metaTitle": "Romaric Guth | Ingénieur Logiciel",
   "metaDescription": "Un petit aperçu de mes projets (Next.js, fullstack). Travaillons ensemble !",
   "HomePage": {
-    "name": "test modal",
-    "job1": "Ingénieur logiciel",
-    "job2": "& Entrepreneur",
-    "learnMore": "En savoir plus",
+    "name": "Romaric Guth",
+    "job1": "Je conçois des applications web utiles, de l’idée à la mise en ligne.",
+    "job2": "Ingénieur logiciel · Entrepreneur",
+    "learnMore": "Voir mes projets",
+    "heroNote": "Du concret, pensé pour les personnes qui l’utilisent.",
+    "heroCard": "Des idées aux projets concrets",
+    "portraitAlt": "Portrait de Romaric Guth",
+    "storyHeading": "Créer, expérimenter, construire",
+    "testimonialHeading": "Ce qu’en disent mes collaborateurs",
     "techstack": "Stack technique",
     "bridgeboardsDescription": "Outil de génération de polycopiés de donnes de bridge",
     "bridgeboards1": "Saisie rapide et simplifiée des jeux",
@@ -45,8 +50,8 @@
     "knowMore": "Vous voulez en savoir plus ?",
     "checkResume": "Voir mon CV",
     "githubExplanation": "Certains de mes projets sont publics sur ",
-    "storyTime": "mis à jour",
-    "story": "test merge"
+    "storyTime": "À propos",
+    "story": "J’ai toujours aimé transformer des idées en projets concrets. En découvrant presque par hasard l’informatique, j’ai trouvé le terrain idéal pour créer, expérimenter et construire de zéro. J’aime alterner entre le travail en équipe, les projets personnels et mes autres passions, comme le bridge et la musique."
   },
   "Common": {
     "contact": "Contact",

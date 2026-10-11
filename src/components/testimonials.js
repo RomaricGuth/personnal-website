@@ -17,11 +17,14 @@ export default function Testimonials() {
   ];
 
   return (
-    <div className="flex flex-col items-center justify-center">
+    <div className="mx-auto flex max-w-6xl flex-col items-center justify-center py-4">
+      <h2 className="mb-10 text-center text-3xl font-bold tracking-tight sm:text-4xl">
+        {t("testimonialHeading")}
+      </h2>
       {testimonials.map((testimonial) => (
         <div
           key={testimonial.author}
-          className="flex flex-1 flex-col items-center text-center rounded-2xl border border-border bg-card px-6 py-10 sm:px-12 shadow-sm max-w-2xl"
+          className="flex w-full max-w-2xl flex-col items-center rounded-3xl border border-neutral-200 bg-[#faf9f7] px-6 py-9 text-center shadow-sm sm:px-12 sm:py-12"
         >
           <Image
             src={testimonial.picture}

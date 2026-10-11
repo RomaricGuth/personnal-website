@@ -8,7 +8,7 @@ import Motion from "./motion";
 
 export default function Home() {
   return (
-    <div>
+    <div className="bg-[#faf9f7]">
       <Presentation />
       <Motion animation="fadeIn">
         <Section id="about">
@@ -19,12 +19,12 @@ export default function Home() {
         <Portfolio />
       </Section>
       <Motion animation="fadeIn">
-        <Section id="testimonials">
+        <Section id="testimonials" className="bg-white">
           <Testimonials />
         </Section>
       </Motion>
       <Motion animation="fadeIn">
-        <Section id="contact">
+        <Section id="contact" className="bg-neutral-950 text-white">
           <LastCall />
         </Section>
       </Motion>
