@@ -10,14 +10,14 @@ export default function Home() {
   return (
     <div className="overflow-hidden bg-[#fcfaf8]">
       <Presentation />
+      <Section id="portfolio" dense={true} className="bg-white">
+        <Portfolio />
+      </Section>
       <Motion animation="fadeIn">
         <Section id="about" className="bg-[#fcfaf8]">
           <About />
         </Section>
       </Motion>
-      <Section id="portfolio" dense={true} className="bg-white">
-        <Portfolio />
-      </Section>
       <Motion animation="fadeIn">
         <Section id="testimonials" className="bg-[#f5f0e9]">
           <Testimonials />
