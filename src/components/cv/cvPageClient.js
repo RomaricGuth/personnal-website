@@ -87,6 +87,8 @@ export default function CvPageClient() {
         </Button>
       </div>
 
+      <p className="text-xs">Ajout par dev</p>
+
       <div className="overflow-x-auto max-w-full">
         <div className="cv-document w-[21cm] min-h-[29.7cm] bg-white shadow-lg">
           <CvDocument options={options} />
