@@ -16,7 +16,7 @@ export default function Presentation() {
       <div className="mx-auto flex max-w-6xl flex-col-reverse items-center justify-between gap-14 md:flex-row md:gap-10">
         <div className="flex max-w-2xl flex-col items-center text-center md:items-start md:text-left">
           <Motion animation="slideIn" transition={{ delay: 0.2 }}>
-            <h1 className="text-5xl font-bold leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl">
+            <h1 className="text-5xl font-bold lowercase leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl">
               {t("name")}
             </h1>
           </Motion>
