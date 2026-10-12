@@ -28,7 +28,7 @@ export default function Menu(props) {
       {menuSections.map((section) => (
         <a
           key={section.name}
-          className="text-white text-lg transition-opacity duration-300 ease-in-out hover:opacity-100 group-hover:opacity-30"
+          className="text-white text-lg transition-all duration-300 ease-in-out hover:text-red-200 hover:underline hover:decoration-red-300 hover:underline-offset-8 hover:opacity-100 group-hover:opacity-30"
           href={`/${locale}${section.link}`}
         >
           {t(section.name)}
