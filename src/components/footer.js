@@ -12,7 +12,7 @@ export default function Footer() {
   const locale = useLocale();
 
   return (
-    <div className="text-white bg-black py-4 flex flex-col flex-1 items-center gap-4">
+    <div data-mtc="test" className="text-white bg-black py-4 flex flex-col flex-1 items-center gap-4">
       <div className="flex w-full flex-col sm:flex-row flex-wrap gap-4 justify-between items-center">
         <div className="flex flex-col flex-1 justify-center items-center order-3 sm:order-1">
           <Image
