@@ -12,6 +12,10 @@ export const menuSections = [
     link: "/cv",
   },
   {
+    name: "design",
+    link: "/design",
+  },
+  {
     name: "contact",
     link: "/contact",
   },
