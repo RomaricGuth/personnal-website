@@ -41,7 +41,7 @@ function SideSection({ title, children }) {
 
 export default function CvDocument({ options = {} }) {
   const t = useTranslations("Cv");
-  const { email = "contact@romaricguth.com", phone } = options;
+  const { email = "contact@romaricgut.com", phone } = options;
   const position = options.position || t("position");
   const skills = [
     { name: t("skillWeb"), items: ["Next.js", "Tailwind CSS", "Payload CMS", "DevOps", "SEO"] },
@@ -57,20 +57,20 @@ export default function CvDocument({ options = {} }) {
         <div className="absolute bottom-0 left-0 h-1 w-[38%] bg-[#b9e66b]" />
         <div className="relative z-10 min-w-0 flex-1">
           <div className="mb-2 text-[9px] font-semibold uppercase tracking-[0.25em] text-[#b9e66b]">{t("cvKicker")}</div>
-          <h1 className="m-0 text-[30px] font-bold leading-none tracking-[-0.04em] text-white">Romaric Guth</h1>
+          <h1 className="m-0 text-[30px] font-bold leading-none tracking-[-0.04em] text-white">Romaric Gut</h1>
           <p className="mb-0 mt-2 text-[14px] font-medium leading-tight text-white/85">{position}</p>
           <div className="mt-4 flex flex-wrap gap-x-4 gap-y-1 text-[9px] text-white/80">
             <span className="flex items-center gap-1.5"><Mail size={11} className="text-[#b9e66b]" />{email}</span>
             {phone && <span className="flex items-center gap-1.5"><Phone size={11} className="text-[#b9e66b]" />{phone}</span>}
-            <a href="https://www.romaricguth.com" className="flex items-center gap-1.5 text-white/80"><Globe size={11} className="text-[#b9e66b]" />romaricguth.com</a>
+            <a href="https://www.romaricgut.com" className="flex items-center gap-1.5 text-white/80"><Globe size={11} className="text-[#b9e66b]" />romaricgut.com</a>
           </div>
         </div>
         <div className="relative z-10 flex shrink-0 flex-col items-center gap-2">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/assets/profile.jpg" alt="Romaric Guth" className="h-[112px] w-[112px] rounded-full border-[3px] border-white/20 object-cover" />
+          <img src="/assets/profile.jpg" alt="Romaric Gut" className="h-[112px] w-[112px] rounded-full border-[3px] border-white/20 object-cover" />
           <div className="flex items-center gap-3 text-white/80">
-            <a href="https://www.linkedin.com/in/guth" aria-label="LinkedIn" className="hover:text-[#b9e66b]"><Linkedin size={15} /></a>
-            <a href="https://github.com/RomaricGuth" aria-label="GitHub" className="hover:text-[#b9e66b]"><Github size={15} /></a>
+            <a href="https://www.linkedin.com/in/gut" aria-label="LinkedIn" className="hover:text-[#b9e66b]"><Linkedin size={15} /></a>
+            <a href="https://github.com/RomaricGut" aria-label="GitHub" className="hover:text-[#b9e66b]"><Github size={15} /></a>
           </div>
         </div>
       </header>

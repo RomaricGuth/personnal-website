@@ -1,8 +1,8 @@
 "use server";
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-const CONTACT_TO = process.env.CONTACT_TO || "contact@romaricguth.com";
-const CONTACT_FROM = process.env.CONTACT_FROM || "contact@romaricguth.com";
+const CONTACT_TO = process.env.CONTACT_TO || "contact@romaricgut.com";
+const CONTACT_FROM = process.env.CONTACT_FROM || "contact@romaricgut.com";
 
 export async function sendContactMessage(prevState, formData) {
   // Honeypot: bots fill hidden fields. Pretend success and drop silently.

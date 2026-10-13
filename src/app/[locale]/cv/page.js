@@ -2,8 +2,8 @@ import { Suspense } from "react";
 import CvPageClient from "@/components/cv/cvPageClient";
 
 export const metadata = {
-  title: "Romaric Guth | CV",
-  description: "Resume of Romaric Guth, Software Engineer.",
+  title: "Romaric Gut | CV",
+  description: "Resume of Romaric Gut, Software Engineer.",
 };
 
 const printStyles = `

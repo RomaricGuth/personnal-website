@@ -25,7 +25,7 @@ export default function Footer() {
         <div className="flex flex-col flex-1 justify-center items-center order-1 sm:order-2 my-4">
           <ContactButton />
           <Link
-            href="https://www.linkedin.com/in/guth"
+            href="https://www.linkedin.com/in/gut"
             className="underline mt-4 flex items-center gap-2"
             target="_blank"
           >
@@ -53,7 +53,7 @@ export default function Footer() {
           </div>
         </div>
       </div>
-      <div>Copyright © {new Date().getFullYear()} Romaric Guth</div>
+      <div>Copyright © {new Date().getFullYear()} Romaric Gut</div>
     </div>
   );
 }
