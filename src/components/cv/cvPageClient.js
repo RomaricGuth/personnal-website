@@ -14,7 +14,7 @@ export default function CvPageClient() {
 
   const [options, setOptions] = useState({
     position: searchParams.get("position") || "",
-    email: searchParams.get("email") || "contact@romaricguth.com",
+    email: searchParams.get("email") || "contact@romaricgut.com",
     phone: searchParams.get("phone") || "",
   });
 

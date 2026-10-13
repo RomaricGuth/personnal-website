@@ -2,10 +2,10 @@ import Home from "../../components/home";
 
 export const metadata = {
   alternates: {
-    canonical: "https://romaricguth.com",
+    canonical: "https://romaricgut.com",
     languages: {
-      en: "https://romaricguth.com/en",
-      fr: "https://romaricguth.com/fr",
+      en: "https://romaricgut.com/en",
+      fr: "https://romaricgut.com/fr",
     },
   },
 };

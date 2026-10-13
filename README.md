@@ -1,6 +1,6 @@
 # Personnal Portfolio website
 
-This website is deployed at https://www.romaricguth.com/
+This website is deployed at https://www.romaricgut.com/
 
 ## Run locally in dev mode
 

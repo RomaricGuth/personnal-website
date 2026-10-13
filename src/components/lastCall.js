@@ -15,18 +15,18 @@ export default function LastCall() {
   const contactMedias = [
     {
       name: "Mail",
-      url: "mailto:contact@romaricguth.com",
-      urlAlias: "contact@romaricguth.com",
+      url: "mailto:contact@romaricgut.com",
+      urlAlias: "contact@romaricgut.com",
       image: "/assets/mail.png",
     },
     {
       name: "LinkedIn",
-      url: "https://www.linkedin.com/in/guth",
+      url: "https://www.linkedin.com/in/gut",
       image: "/assets/linkedin.png",
     },
     {
       name: "Malt",
-      url: "https://www.malt.fr/profile/guthromaric",
+      url: "https://www.malt.fr/profile/gutromaric",
       image: "/assets/malt.png",
     },
   ];
@@ -34,7 +34,7 @@ export default function LastCall() {
   const otherMedias = [
     {
       name: "Github",
-      url: "https://www.github.com/RomaricGuth",
+      url: "https://www.github.com/RomaricGut",
       image: "/assets/github.png",
       text: t("githubExplanation"),
     },

@@ -48,7 +48,7 @@ export async function GET(request) {
     return new Response(new Uint8Array(pdf), {
       headers: {
         "Content-Type": "application/pdf",
-        "Content-Disposition": `attachment; filename="Romaric_Guth_CV_${lang}.pdf"`,
+        "Content-Disposition": `attachment; filename="Romaric_Gut_CV_${lang}.pdf"`,
       },
     });
   } finally {

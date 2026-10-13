@@ -14,13 +14,13 @@ export async function generateMetadata({ params }) {
 
 const directLinks = [
   {
-    name: "contact@romaricguth.com",
-    href: "mailto:contact@romaricguth.com",
+    name: "contact@romaricgut.com",
+    href: "mailto:contact@romaricgut.com",
     Icon: Mail,
   },
   {
-    name: "linkedin.com/in/guth",
-    href: "https://www.linkedin.com/in/guth",
+    name: "linkedin.com/in/gut",
+    href: "https://www.linkedin.com/in/gut",
     Icon: Linkedin,
   },
 ];
