@@ -18,7 +18,7 @@ export default function Header() {
 
   return (
     <div
-      className={`flex flex-col lg:flex-row flex-wrap justify-between items-center px-16 py-2 lg:py-3 gap-3 transition-colors duration-300 ${
+      className={`flex flex-col lg:flex-row flex-wrap justify-between items-center px-6 sm:px-8 lg:px-16 py-2 lg:py-3 gap-3 transition-colors duration-300 ${
         scrolled
           ? "bg-black/70 backdrop-blur-md border-b border-white/10"
           : "bg-black border-b border-transparent"
