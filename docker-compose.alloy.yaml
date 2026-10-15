@@ -1,0 +1,13 @@
+services:
+  web:
+    image: node:22-bookworm
+    working_dir: /workspace
+    network_mode: host
+    volumes:
+      - .:/workspace
+    environment:
+      IS_ALLOY: ${IS_ALLOY:-false}
+      PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: "1"
+      NEXT_TELEMETRY_DISABLED: "1"
+      BREVO_API_KEY: ${BREVO_API_KEY:-}
+    command: bash -lc "npm install --ignore-scripts && npx next dev -p 3000 -H 0.0.0.0"
