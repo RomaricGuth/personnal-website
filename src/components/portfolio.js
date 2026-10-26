@@ -1,5 +1,6 @@
 "use client";
 
+import { ArrowUpRight } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 import Link from "next/link";
 import { technos } from "../utils/technos";
@@ -7,17 +8,11 @@ import Image from "./image";
 import ImageCarousel from "./image-carousel";
 import Motion from "./motion";
 import { Button } from "./ui/button";
-import bridgeboards_editor_en from "/public/assets/bridgeboards_editor_en.png";
-import bridgeboards_editor_fr from "/public/assets/bridgeboards_editor_fr.png";
-import bridgeboards_export_en from "/public/assets/bridgeboards_export_en.png";
-import bridgeboards_export_fr from "/public/assets/bridgeboards_export_fr.png";
-import bridgeboards_library_en from "/public/assets/bridgeboards_library_en.png";
-import bridgeboards_library_fr from "/public/assets/bridgeboards_library_fr.png";
 import bridgetonic_booking from "/public/assets/bridgetonic_booking.png";
 import bridgetonic_catalog from "/public/assets/bridgetonic_catalog.png";
 import bridgetonic_detail from "/public/assets/bridgetonic_detail.png";
-import echasses_catalog from "/public/assets/echasses_catalog.png";
-import echasses_command from "/public/assets/echasses_command.png";
+import makethemcode_chat from "/public/assets/makethemcode_chat.png";
+import makethemcode_steps from "/public/assets/makethemcode_steps.png";
 import mathadata_en from "/public/assets/mathadata_en.png";
 import mathadata from "/public/assets/mathadata_fr.png";
 import notebook from "/public/assets/notebook.png";
@@ -27,6 +22,30 @@ export default function Portfolio() {
   const locale = useLocale();
 
   const apps = [
+    {
+      name: "MakeThemCode",
+      description: t("makethemcodeDescription"),
+      bullets: [t("makethemcode1"), t("makethemcode2"), t("makethemcode3")],
+      techs: [
+        technos.NEXT,
+        technos.TAILWIND,
+        technos.PAYLOAD,
+        technos.STRIPE,
+        technos.DOCKER,
+      ],
+      pictures: [
+        {
+          src: makethemcode_chat,
+          alt: t("makethemcodeChatAlt"),
+        },
+        {
+          src: makethemcode_steps,
+          alt: t("makethemcodeStepsAlt"),
+        },
+      ],
+      link: "https://makethemcode.com",
+      callToAction: t("makethemcodeCTA"),
+    },
     {
       name: "MathAData",
       description: t("mathaDataDescription"),
@@ -63,31 +82,6 @@ export default function Portfolio() {
       link: "https://mathadata.fr",
     },
     {
-      name: "Bridge Boards",
-      description: t("bridgeboardsDescription"),
-      bullets: [t("bridgeboards1"), t("bridgeboards2")],
-      techs: [technos.NEXT, technos.TAILWIND, technos.PAYLOAD],
-      pictures: [
-        {
-          src:
-            locale === "en" ? bridgeboards_editor_en : bridgeboards_editor_fr,
-          alt: t("bridgeboardsEditorAlt"),
-        },
-        {
-          src:
-            locale === "en" ? bridgeboards_export_en : bridgeboards_export_fr,
-          alt: t("bridgeboardsExportAlt"),
-        },
-        {
-          src:
-            locale === "en" ? bridgeboards_library_en : bridgeboards_library_fr,
-          alt: t("bridgeboardsLibraryAlt"),
-        },
-      ],
-      link: "https://bridge-boards.com",
-      callToAction: t("bridgeboardsCTA"),
-    },
-    {
       name: "Bridge-Tonic",
       description: t("bridgetonicDescription"),
       bullets: [t("bridgetonic1"), t("bridgetonic2"), t("bridgetonic3")],
@@ -109,28 +103,18 @@ export default function Portfolio() {
       link: "https://bridgetonic.com",
       callToAction: t("bridgetonicCTA"),
     },
+  ];
+
+  const otherProjects = [
+    {
+      name: "Bridge Boards",
+      description: t("bridgeboardsDescription"),
+      link: "https://bridge-boards.com",
+    },
     {
       name: "E-chasses",
       description: t("echassesDescription"),
-      bullets: [t("echasses1"), t("echasses2"), t("echasses3")],
-      techs: [technos.NEXT, technos.TAILWIND, technos.STRAPI, technos.STRIPE],
-      videos: [
-        {
-          src: "/assets/echasses.mp4",
-        },
-      ],
-      pictures: [
-        {
-          src: echasses_catalog,
-          alt: t("echassesCatalogAlt"),
-        },
-        {
-          src: echasses_command,
-          alt: t("echassesCommandAlt"),
-        },
-      ],
       link: "https://e-chasses.com",
-      callToAction: t("echassesCTA"),
     },
   ];
 
@@ -211,6 +195,29 @@ export default function Portfolio() {
           </Motion>
         ))}
       </div>
+      <Motion animation="fadeIn">
+        <h3 className="text-2xl font-semibold text-center mt-20 mb-8">
+          {t("otherProjects")}
+        </h3>
+        <div className="grid gap-6 sm:grid-cols-2">
+          {otherProjects.map((project) => (
+            <Link
+              key={project.name}
+              href={project.link}
+              target="_blank"
+              className="group rounded-2xl border border-border bg-card p-6 shadow-sm transition-shadow duration-300 hover:shadow-xl"
+            >
+              <div className="flex items-center gap-2 font-semibold">
+                {project.name}
+                <ArrowUpRight className="size-4 text-muted-foreground transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              </div>
+              <p className="mt-2 text-muted-foreground">
+                {project.description}
+              </p>
+            </Link>
+          ))}
+        </div>
+      </Motion>
     </div>
   );
 }
